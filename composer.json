@@ -7,5 +7,8 @@
             "email": "330576744@qq.com"
         }
     ],
-    "require": {}
+    "require": {
+        "inhere/console": "^3.1",
+        "hassankhan/config": "^2.0"
+    }
 }
