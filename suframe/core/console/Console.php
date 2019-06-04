@@ -1,7 +1,6 @@
 <?php
 namespace suframe\core\console;
 
-use Inhere\Console\Application;
 use Inhere\Console\IO\Input;
 use Inhere\Console\IO\Output;
 use suframe\core\traits\Singleton;
@@ -49,7 +48,7 @@ class Console{
 	}
 
 	/**
-	 * @return mixed
+	 * @return Application
 	 */
 	public function getApp(array $meta) {
 		if(!$this->app){
