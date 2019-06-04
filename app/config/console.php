@@ -1,7 +1,5 @@
 <?php
 return [
-	'console' => [
-		'name' => 'Summer Framework server',
-		'version' => '0.0.1',
-	]
+//    'name' => 'my Framework server',
+//    'version' => '0.0.1',
 ];

@@ -5,7 +5,7 @@ defined('SUMMER_APP_ROOT') or define('SUMMER_APP_ROOT', realpath(getcwd()) . '/a
 
 $args = $argv;
 array_shift($args);
-$summer = (new \suframe\manage\Core())->init();
+$summer = \suframe\manage\Core::getInstance()->init();
 
 //可以设置自定义Config类
 //$summer->setConfig()
