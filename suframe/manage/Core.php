@@ -5,6 +5,10 @@ use suframe\core\console\Config;
 use suframe\core\console\Application;
 use suframe\core\console\Console;
 use suframe\core\traits\Singleton;
+use suframe\core\event\EventManager;
+use suframe\manage\components\Atomic;
+use suframe\manage\events\Events;
+use Zend\EventManager\ListenerAggregateInterface;
 
 /**
  * summer framework manage
@@ -15,6 +19,9 @@ use suframe\core\traits\Singleton;
 class Core {
 	use Singleton;
 
+	/**
+	 * @var Config
+	 */
 	protected $config;
 	/**
 	 * @var Application
@@ -26,6 +33,8 @@ class Core {
 	 * @return $this
 	 */
 	public function init(){
+		//注册事件
+		$this->registerListener();
 		//初始化系统配置
 		$this->config = $config = $this->getConfig();
 		$config->load(__DIR__ . '/config/console.php');
@@ -34,14 +43,13 @@ class Core {
 		if(is_file($selfConfig)){
 			$config->load($selfConfig);
 		}
+		EventManager::get()->trigger(Events::E_CONSOLE_INIT_BEFORE, $this);
 		// 注册命令
 		$this->console = $console = $this->getConsole();
 		$console->getRouter()->setBlocked([]);
-		// 注册独立命令
-        // todo 暂时还没有设计单独的命令
-//		$console->registerCommands('suframe\\manage\\commands', __DIR__ . '/commands');
 		// 注册命令组
 		$console->registerGroups('suframe\\manage\\controllers', __DIR__ . '/controllers');
+		EventManager::get()->trigger(Events::E_CONSOLE_INIT_AFTER, $this);
 		return $this;
 	}
 
@@ -52,6 +60,7 @@ class Core {
 	 * @throws \ReflectionException
 	 */
 	public function run(array $args): void {
+		EventManager::get()->trigger(Events::E_CONSOLE_RUN_BEFORE, $this);
 		$command = array_shift($args);
 		$console = $this->console;
 		switch ($command){
@@ -68,6 +77,7 @@ class Core {
 			default:
 				$console->run();
 		}
+		EventManager::get()->trigger(Events::E_CONSOLE_RUN_AFTER, $this);
 	}
 
 	/**
@@ -108,4 +118,26 @@ class Core {
 		$this->console = $console;
 	}
 
+	public function getOutput(){
+		return $this->console->getOutput();
+	}
+
+	/**
+	 * 注册事件
+	 */
+	protected function registerListener(){
+		$config = __DIR__ . '/config/listener.php';
+		$this->getConfig()->load($config);
+		//自定义事件
+		$selfConfig = SUMMER_APP_ROOT . 'config/listener.php';
+		$this->getConfig()->load($selfConfig);
+		$listeners = $this->getConfig()->get('listener');
+		if(!$listeners){
+			return;
+		}
+		$eventManager = EventManager::get();
+		foreach ($listeners as $listener) {
+			(new $listener)->attach($eventManager);
+		}
+	}
 }

@@ -10,7 +10,9 @@ use Inhere\Console\Util\Show;
 use suframe\core\config\Config;
 use suframe\core\console\Controller;
 use suframe\core\net\http\Server;
+use suframe\core\event\EventManager;
 use suframe\manage\Core;
+use suframe\manage\events\Events;
 
 /**
  * 帮助命令
@@ -40,7 +42,9 @@ class Http extends Controller {
         $this->showCommand($config);
         $http = new Server();
         $http->create();
+        EventManager::get()->trigger(Events::E_HTTP_RUN_BEFORE, $this, $http);
         $http->start();
+		EventManager::get()->trigger(Events::E_HTTP_RUN_AFTER, $this, $http);
 	}
 
 	protected function showCommand(Config $config){
