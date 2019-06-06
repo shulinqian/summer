@@ -1,14 +1,13 @@
 <?php
+
 namespace suframe\manage;
 
-use suframe\core\console\Config;
+use suframe\core\components\Config;
 use suframe\core\console\Application;
 use suframe\core\console\Console;
 use suframe\core\traits\Singleton;
 use suframe\core\event\EventManager;
-use suframe\manage\components\Atomic;
 use suframe\manage\events\Events;
-use Zend\EventManager\ListenerAggregateInterface;
 
 /**
  * summer framework manage
@@ -20,10 +19,6 @@ class Core {
 	use Singleton;
 
 	/**
-	 * @var Config
-	 */
-	protected $config;
-	/**
 	 * @var Application
 	 */
 	protected $console;
@@ -32,17 +27,11 @@ class Core {
 	 * 初始化
 	 * @return $this
 	 */
-	public function init(){
+	public function init() {
+		//初始化系统配置
+		$this->loadConfig();
 		//注册事件
 		$this->registerListener();
-		//初始化系统配置
-		$this->config = $config = $this->getConfig();
-		$config->load(__DIR__ . '/config/console.php');
-		//应用自定义
-		$selfConfig = SUMMER_APP_ROOT . 'config/console.php';
-		if(is_file($selfConfig)){
-			$config->load($selfConfig);
-		}
 		EventManager::get()->trigger(Events::E_CONSOLE_INIT_BEFORE, $this);
 		// 注册命令
 		$this->console = $console = $this->getConsole();
@@ -63,7 +52,7 @@ class Core {
 		EventManager::get()->trigger(Events::E_CONSOLE_RUN_BEFORE, $this);
 		$command = array_shift($args);
 		$console = $this->console;
-		switch ($command){
+		switch ($command) {
 			case '':
 				$console->showHelpInfo();
 				break;
@@ -81,31 +70,14 @@ class Core {
 	}
 
 	/**
-	 * 获取配置
-	 * @return Config
-	 */
-	public function getConfig(): Config {
-		if(!$this->config){
-			$this->config = new Config;
-		}
-		return $this->config;
-	}
-
-	/**
-	 * 设置配置
-	 * @param Config $config
-	 */
-	public function setConfig(Config $config): void {
-		$this->config = $config;
-	}
-
-	/**
 	 * 获取console
 	 * @return Application
 	 */
 	public function getConsole(): Application {
-		if(!$this->console){
-			$this->console = Console::getInstance()->getApp($this->getConfig()->get('console'));
+		if (!$this->console) {
+			$this->console = Console::getInstance()->getApp(
+				Config::getInstance()->get('console')->toArray()
+			);
 		}
 		return $this->console;
 	}
@@ -118,21 +90,37 @@ class Core {
 		$this->console = $console;
 	}
 
-	public function getOutput(){
+	/**
+	 * 控制台输出
+	 * @return \Inhere\Console\IO\Output|\Inhere\Console\IO\OutputInterface
+	 */
+	public function getOutput() {
 		return $this->console->getOutput();
+	}
+
+	/**
+	 * 初始化配置
+	 */
+	protected function loadConfig() {
+		$config = Config::getInstance([]);
+		// 系统配置
+		$config->loadFileByName(__DIR__ . '/config/console.php');
+		// 系统事件
+		$config->loadFileByName(__DIR__ . '/config/listener.php');
+		// ini配置
+		$config->loadFile(SUMMER_APP_ROOT . 'summer.ini');
+		// 应用自定义
+		$selfConfig = SUMMER_APP_ROOT . 'config/config.php';
+		$config->loadFile($selfConfig);
 	}
 
 	/**
 	 * 注册事件
 	 */
-	protected function registerListener(){
-		$config = __DIR__ . '/config/listener.php';
-		$this->getConfig()->load($config);
-		//自定义事件
-		$selfConfig = SUMMER_APP_ROOT . 'config/listener.php';
-		$this->getConfig()->load($selfConfig);
-		$listeners = $this->getConfig()->get('listener');
-		if(!$listeners){
+	protected function registerListener() {
+		$config = Config::getInstance();
+		$listeners = $config->get('listener');
+		if (!$listeners) {
 			return;
 		}
 		$eventManager = EventManager::get();

@@ -6,10 +6,7 @@
 
 namespace suframe\manage\events;
 
-
 use suframe\manage\components\Atomic;
-use suframe\manage\components\Table;
-use suframe\manage\Core;
 use Swoole\Http\Request;
 use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
@@ -20,21 +17,18 @@ class HttpListener implements ListenerAggregateInterface {
 	use ListenerAggregateTrait;
 
 	/**
-	 * Attach one or more listeners
-	 *
-	 * Implementors may add an optional $priority argument; the EventManager
-	 * implementation will pass this to the aggregate.
-	 *
+	 * 注册事件
 	 * @param EventManagerInterface $events
 	 * @param int $priority
-	 * @return void
 	 */
 	public function attach(EventManagerInterface $events, $priority = 1) {
 		$this->listeners[] = $events->attach(Events::E_HTTP_REQUEST, [$this, 'request'], $priority);
-		$this->listeners[] = $events->attach(Events::E_HTTP_RESPONSE_BEFORE, [$this, 'responseBefore'], $priority);
-		$this->listeners[] = $events->attach(Events::E_HTTP_RESPONSE_AFTER, [$this, 'responseAfter'], $priority);
 	}
 
+	/**
+	 * 请求事件
+	 * @param EventInterface $e
+	 */
 	public function request(EventInterface $e) {
 		/** @var Request $request */
 		$request = $e->getParams();
@@ -43,24 +37,5 @@ class HttpListener implements ListenerAggregateInterface {
 		$request->header['request-id'] = $id;
 		echo "新请求，通过事件" .$e->getName(), '访问id:'. $request->header['request-id'], "\n";
 //		echo $request->['request_time_float'] , "\n";
-	}
-
-	public function responseBefore(EventInterface $e) {
-
-	}
-
-	public function responseAfter(EventInterface $e) {
-
-	}
-
-
-	/**
-	 * Detach all previously attached listeners
-	 *
-	 * @param EventManagerInterface $events
-	 * @return void
-	 */
-	public function detach(EventManagerInterface $events) {
-		// TODO: Implement detach() method.
 	}
 }

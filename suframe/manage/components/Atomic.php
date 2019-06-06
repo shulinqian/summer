@@ -6,7 +6,6 @@
 namespace suframe\manage\components;
 
 use suframe\core\traits\Singleton;
-use swoole_lock;
 
 class Atomic {
 
@@ -18,7 +17,12 @@ class Atomic {
 	}
 
 	public function requestId(){
-		return $this->atomic->add(1);
+		$id = $this->atomic->add(1);
+		if($id > 99999999){
+			//防止溢出
+			$this->atomic->set(1);
+		}
+		return $id;
 	}
 
 }

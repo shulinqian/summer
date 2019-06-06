@@ -1,15 +1,17 @@
 {
-    "name": "root/summer",
-    "description": "summer manage",
-    "authors": [
-        {
-            "name": "qian",
-            "email": "330576744@qq.com"
-        }
-    ],
-    "require": {
-        "inhere/console": "^3.1",
-        "hassankhan/config": "^2.0",
-        "zendframework/zend-eventmanager": "^3.2"
+  "name": "suframe/summer",
+  "description": "summer framework demo",
+  "authors": [
+    {
+      "name": "qian",
+      "email": "330576744@qq.com"
     }
+  ],
+  "require": {
+    "inhere/console": "^3.1",
+    "ext-pcntl": "^7.2",
+    "zendframework/zend-eventmanager": "^3.2",
+    "zendframework/zend-config": "^3.2",
+    "zendframework/zend-config-aggregator": "^1.1"
+  }
 }
