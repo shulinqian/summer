@@ -13,7 +13,7 @@ return [
 	'description' => 'welcome to use summer framework',
 	'debug' => \Inhere\Console\Console::VERB_ERROR,
 	'logoText' => $logo,
-	'logoStyle' => \Inhere\Console\Component\Style\Style::SUCCESS,
+	'logoStyle' => 'fg=green;',
 	'profile' => false,
 	'version' => '0.0.1',
 	'publishAt' => '2019.06.04',
