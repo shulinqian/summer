@@ -74,7 +74,7 @@ class HttpStartCommand extends HttpBase
      * @param Response $response
      */
     public function onReceive(\Swoole\Server $serv, $fd, $reactor_id, $data) {
-        HttpProxy::getInstance()->dispatch($serv, $fd, $reactor_id, $data);
+		HttpProxy::getInstance()->dispatch($serv, $fd, $reactor_id, $data);
         return;
         $uri = $request->server['request_uri'];
         if ($uri == '/favicon.ico') {

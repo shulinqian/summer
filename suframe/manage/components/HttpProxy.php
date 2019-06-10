@@ -1,70 +1,83 @@
 <?php
 
-
 namespace suframe\manage\components;
 
-
+use suframe\core\net\http\Response;
 use suframe\core\traits\Singleton;
-use Swoole\Client;
-use swoole_client;
 
-class HttpProxy
-{
-    use Singleton;
+/**
+ * http 代理
+ * Class HttpProxy
+ * @package suframe\manage\components
+ */
+class HttpProxy {
+	use Singleton;
+	protected $atomic;
 
-    public function __construct()
-    {
-        $this->getClient();
-    }
+	public function __construct() {
+		$this->getClient();
+		$this->atomic = new Atomic();
+	}
 
-    public function dispatch(\Swoole\Server $serv, $fd, $reactor_id, $data)
-    {
-        echo "dispatch \n";
-        $data = explode("\r\n", $data);
-        $info = [
-            'method' => $data[0],
-            'fd' => $fd,
-        ];
-        $this->getClient()->send(json_encode($info));
-        $rs = $this->getClient()->recv();
-        $this->response($serv, $fd, $rs);
-        $serv->close($fd);
-    }
+	public function dispatch(\Swoole\Server $serv, $fd, $reactor_id, $data) {
+		echo "dispatch \n";
+		$data = explode("\r\n", $data);
+		$info = [
+			'method' => $data[0],
+			'fd' => $fd,
+		];
+		$info = json_encode($info);
+		$this->send($serv, $fd, $info);
+	}
 
-    protected $client;
+	protected function send($serv, $fd, $info, $sendTimes = 1) {
+		$client = $this->getClient()->get();
+		if($sendTimes == 1){
+			echo "获取client\n";
+		}
 
-    protected function getClient(){
-        if($this->client){
-            return $this->client;
-        }
+		if ($client) {
+			$ret = $client->send($info);//链接端口可能会出警告
+			//无法判断tcp 因为应用层无法获得底层TCP连接的状态，执行send或recv时应用层与内核发生交互，才能得到真实的连接可用状态
+			$rs = $client->recv();
+			if ($rs) {
+				$data = Response::getInstance()->write($rs);
+				echo "发送数据: {$data}\n";
+				$serv->send($fd, $data);
+				$serv->close($fd);
+				$this->getClient()->put($client);
+				return true;
+			}
+			echo "rs为空??\n";
+		}
 
+		echo "client为空??\n";
 
-        $client = new Client(SWOOLE_SOCK_TCP | SWOOLE_KEEP);
-        $client->connect('127.0.0.1', 9502);
-        return $this->client = $client;
-    }
+		//否则就是出问题了，需要清理client, 然后自动重连
+		if (($sendTimes > 1) || $this->atomic->lock()) {
+			//重试1次，返回500状态错误
+			$data = Response::getInstance()->error('server error');
+			$serv->send($fd, $data);
+			$serv->close($fd);
+			if($sendTimes > 1){
+				$this->atomic->unlock();
+			}
+			return false;
+		}
+		if($sendTimes == 1){
+			echo "重新整？？\n";
+			$this->getClient()->createPool();
+			$this->send($serv, $fd, $info, 2);
+		}
+	}
 
-    function response($serv, $fd, $respData)
-    {
-        //响应行
-        $response = array(
-            'HTTP/1.1 200',
-        );
-        //响应头
-        $headers = array(
-            'Server' => 'SwooleServer',
-            'Content-Type' => 'text/html;charset=utf8',
-            'Content-Length' => strlen($respData),
-        );
-        foreach ($headers as $key => $val) {
-            $response[] = $key . ':' . $val;
-        }
-        //空行
-        $response[] = '';
-        //响应体
-        $response[] = $respData;
-        $send_data = join("\r\n", $response);
-        $serv->send($fd, $send_data);
-    }
+	protected $client;
+
+	/**
+	 * @return HttpPool
+	 */
+	protected function getClient() {
+		return HttpPool::getInstance(5);
+	}
 
 }
