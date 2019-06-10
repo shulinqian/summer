@@ -29,32 +29,20 @@ class HttpPool {
 
 	public function __construct($size) {
 		$this->size = $size;
-		$this->createPool($size);
+        $this->createPool();
 	}
 
 	public function createPool($size = null) {
 		$this->creating = true;
 		$size = $this->size;
-		if ($this->pool) {
-			while ($rs = $this->get()) {
-				//清理无效连接
-				$rs->isConnected() && $rs->close();
-			}
-			echo "clean pool\n";
-		} else {
-			$this->pool = new Channel($size);
-		}
-		for ($i = 0; $i < $size; $i++) {
-			$client = new Client(SWOOLE_SOCK_TCP | SWOOLE_KEEP);
-			$res = @$client->connect('127.0.0.1', 9502);
-			if ($res) {
-				$this->put($client);
-			}
-		}
-
+        $this->pool = new Channel($size);
 	}
 
 	public function put($client) {
+	    if($this->pool->length() > $this->size){
+            $client->close();
+	        return false;
+        }
 		$this->pool->push($client);
 	}
 
@@ -66,7 +54,16 @@ class HttpPool {
 	 * @return Client|null
 	 */
 	public function get() {
-		return $this->pool->pop($this->timeout);
+//        echo "连接数" . $this->pool->length() . "\n";
+        if($this->pool->length()){
+            return $this->pool->pop($this->timeout);
+        }
+        $client = new Client(SWOOLE_SOCK_TCP | SWOOLE_KEEP);
+        $res = @$client->connect('127.0.0.1', 9502);
+        if ($res) {
+            $this->put($client);
+            return $this->get();
+        }
 	}
 
 }

@@ -28,7 +28,7 @@ class Atomic {
 	public function lock(){
 		$id = $this->atomic->add(1);
 		echo "lock {$id}\n";
-		return $id != 1;
+		return $id == 1;
 	}
 
 	public function unlock(){

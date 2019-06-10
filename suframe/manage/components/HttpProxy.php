@@ -12,11 +12,11 @@ use suframe\core\traits\Singleton;
  */
 class HttpProxy {
 	use Singleton;
-	protected $atomic;
+	protected $counter = 0;
+	protected $resultError = 0;
 
 	public function __construct() {
 		$this->getClient();
-		$this->atomic = new Atomic();
 	}
 
 	public function dispatch(\Swoole\Server $serv, $fd, $reactor_id, $data) {
@@ -27,57 +27,44 @@ class HttpProxy {
 			'fd' => $fd,
 		];
 		$info = json_encode($info);
-		$this->send($serv, $fd, $info);
+        $this->send($serv, $fd, $info);
+
 	}
 
-	protected function send($serv, $fd, $info, $sendTimes = 1) {
+	protected $client = [];
+	protected function send($serv, $fd, $info) {
 		$client = $this->getClient()->get();
-		if($sendTimes == 1){
-			echo "获取client\n";
-		}
-
 		if ($client) {
 			$ret = $client->send($info);//链接端口可能会出警告
+            if(!$ret){
+                echo "数据都没有发送出去\n";
+            }
 			//无法判断tcp 因为应用层无法获得底层TCP连接的状态，执行send或recv时应用层与内核发生交互，才能得到真实的连接可用状态
 			$rs = $client->recv();
 			if ($rs) {
-				$data = Response::getInstance()->write($rs);
-				echo "发送数据: {$data}\n";
+			    $this->getClient()->put($client);
+                echo "\n\n" . $info . $rs, "\n\n";
+				$data = Response::getInstance()->write($info . $rs);
+//				echo "发送数据: {$data}\n";
 				$serv->send($fd, $data);
 				$serv->close($fd);
-				$this->getClient()->put($client);
 				return true;
-			}
-			echo "rs为空??\n";
+			} else {
+			    //无效
+                $client->close();
+            }
+//			echo "rs为空??\n";
 		}
-
-		echo "client为空??\n";
-
-		//否则就是出问题了，需要清理client, 然后自动重连
-		if (($sendTimes > 1) || $this->atomic->lock()) {
-			//重试1次，返回500状态错误
-			$data = Response::getInstance()->error('server error');
-			$serv->send($fd, $data);
-			$serv->close($fd);
-			if($sendTimes > 1){
-				$this->atomic->unlock();
-			}
-			return false;
-		}
-		if($sendTimes == 1){
-			echo "重新整？？\n";
-			$this->getClient()->createPool();
-			$this->send($serv, $fd, $info, 2);
-		}
+        $data = Response::getInstance()->error('server error');
+        $serv->send($fd, $data);
+        $serv->close($fd);
 	}
-
-	protected $client;
 
 	/**
 	 * @return HttpPool
 	 */
 	protected function getClient() {
-		return HttpPool::getInstance(5);
+		return HttpPool::getInstance(1);
 	}
 
 }
