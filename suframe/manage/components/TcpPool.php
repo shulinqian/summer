@@ -11,11 +11,11 @@ use Swoole\Client;
 use Swoole\Coroutine\Channel;
 
 /**
- * http连接池
- * Class HttpPool
+ * tcp连接池
+ * Class TcpPool
  * @package suframe\manage\components
  */
-class HttpPool {
+class TcpPool {
 	use Singleton;
 
 	protected $maxReTry = 200;

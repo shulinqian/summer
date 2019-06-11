@@ -8,7 +8,7 @@ use suframe\core\components\console\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class HttpCheckCommand extends HttpBase {
+class TcpCheckCommand extends TcpBase {
 
     /**
      * kill by shell: ps -ef |grep summer|cut -c 11-14 |xargs kill -9
@@ -22,17 +22,17 @@ class HttpCheckCommand extends HttpBase {
         $rs = $this->sendSig(0);
         $io = new SymfonyStyle($input, $output);
         if($rs !== true){
-            $io->note('http has closed');
+            $io->note('tcp has closed');
             return;
         }
 
-        $httpConfig = Config::getInstance()->get('http.server')->toArray();
-        $io->success(sprintf('http is running, listen: %s:%s', $httpConfig['listen'], $httpConfig['port']));
+        $config = Config::getInstance()->get('tcp.server')->toArray();
+        $io->success(sprintf('tcp is running, listen: %s:%s', $config['listen'], $config['port']));
     }
 
     protected function configure()
     {
-        $this->setName('http:check');
+        $this->setName('tcp:check');
     }
 
 }

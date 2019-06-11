@@ -6,7 +6,7 @@ use suframe\core\components\console\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class HttpStopCommand extends HttpBase
+class TcpStopCommand extends TcpBase
 {
 
     /**
@@ -24,13 +24,13 @@ class HttpStopCommand extends HttpBase
         if($rs !== true){
             $io->error($rs);
         } else {
-            $io->success('http stop success');
+            $io->success('tcp stop success');
         }
     }
 
     protected function configure()
     {
-        $this->setName('http:stop')
+        $this->setName('tcp:stop')
             ->addOption('sig', 's', null, 'https://wiki.swoole.com/wiki/page/158.html');
     }
 

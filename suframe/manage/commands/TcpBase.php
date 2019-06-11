@@ -7,12 +7,12 @@ use suframe\core\components\Config;
 use Symfony\Component\Console\Command\Command;
 use swoole_process;
 
-abstract class HttpBase extends Command
+abstract class TcpBase extends Command
 {
 
     protected function sendSig($sig){
         $config = Config::getInstance();
-        $pidFile = $config->get('http.swoole.pid_file');
+        $pidFile = $config->get('tcp.swoole.pid_file');
         if(!is_file($pidFile)){
             return 'no pid file';
         }

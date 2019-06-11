@@ -2,7 +2,6 @@
 
 namespace suframe\manage;
 
-
 use suframe\core\components\Config;
 use suframe\core\components\console\Application;
 use suframe\core\components\console\Console;
@@ -10,7 +9,6 @@ use suframe\core\traits\Singleton;
 use suframe\core\event\EventManager;
 use suframe\manage\events\Events;
 use Symfony\Component\Console\Output\ConsoleOutput;
-use suframe\manage\commands\SummerCommand;
 
 /**
  * summer framework manage
@@ -53,7 +51,6 @@ class Core
     public function run(array $args): void
     {
         EventManager::get()->trigger(Events::E_CONSOLE_RUN_BEFORE, $this);
-        $command = array_shift($args);
         $console = $this->getConsole();
         $console->run();
         EventManager::get()->trigger(Events::E_CONSOLE_RUN_AFTER, $this);

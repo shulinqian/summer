@@ -8,7 +8,7 @@ use suframe\core\components\console\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class HttpRestartCommand extends HttpStartCommand
+class TcpRestartCommand extends TcpStartCommand
 {
 
     protected function execute(InputInterface $input, OutputInterface $output){
@@ -17,7 +17,7 @@ class HttpRestartCommand extends HttpStartCommand
         if($rs !== true){
             $io->error($rs);
         } else {
-            $io->success('http restart success');
+            $io->success('tcp restart success');
         }
     }
 
@@ -26,7 +26,7 @@ class HttpRestartCommand extends HttpStartCommand
      */
     protected function configure()
     {
-        $this->setName('http:restart');
+        $this->setName('tcp:restart');
     }
 
 }
