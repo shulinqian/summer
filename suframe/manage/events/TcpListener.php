@@ -6,8 +6,7 @@
 
 namespace suframe\manage\events;
 
-use suframe\manage\components\Atomic;
-use Swoole\Http\Request;
+use Swoole\Coroutine;
 use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
@@ -22,8 +21,8 @@ class TcpListener implements ListenerAggregateInterface {
 	 * @param int $priority
 	 */
 	public function attach(EventManagerInterface $events, $priority = 1) {
-		/*$this->listeners[] = $events->attach(Events::E_TCP_REQUEST, [$this, 'request'], $priority);
-		$this->listeners[] = $events->attach(Events::E_TCP_RESPONSE_AFTER, [$this, 'after'], $priority);*/
+		$this->listeners[] = $events->attach(Events::E_TCP_REQUEST, [$this, 'request'], $priority);
+		$this->listeners[] = $events->attach(Events::E_TCP_RESPONSE_AFTER, [$this, 'after'], $priority);
 	}
 
 	/**
@@ -32,7 +31,15 @@ class TcpListener implements ListenerAggregateInterface {
 	 */
 	public function request(EventInterface $e) {
 		$data = $e->getParams();
-		echo "request data:\n {$data['data']}\n";
+        $request = \Zend\Http\Request::fromString($data['data']);
+        if($request->getUri() == '/favicon.ico'){
+            $data['data'] = null;
+            return;
+        }
+        $headers = $request->getHeaders();
+        $headers->addHeaderLine('request_id', uniqid());
+        $headers->addHeaderLine('uid', rand(1, 9999));
+        $data['data'] = $request . '';
 	}
 
 	/**

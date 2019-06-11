@@ -75,11 +75,18 @@ class TcpStartCommand extends TcpBase {
 	 * @param $data
 	 */
 	public function onReceive(\Swoole\Server $serv, $fd, $reactor_id, $data) {
-		EventManager::get()->trigger('tcp.request', null, ['data' => $data]);
+        //EventManager::get()->trigger('tcp.request', null, ['data' => &$data]);
+        if(!$data){
+            $serv->close($fd);
+            return;
+        }
 		$out = $this->proxy->dispatch($serv, $fd, $reactor_id, $data);
-		EventManager::get()->trigger('tcp.response.after', null, [
-			'out' => $out,
-		]);
+        go(function () use ($data, $out){
+            EventManager::get()->trigger('tcp.response.after', null, [
+                'data' => $data,
+                'out' => $out,
+            ]);
+        });
 	}
 
 	/**

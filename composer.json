@@ -13,7 +13,8 @@
     "zendframework/zend-config": "^3.2",
     "zendframework/zend-config-aggregator": "^1.1",
     "symfony/console": "^4.3",
-    "symfony/finder": "^4.3"
+    "symfony/finder": "^4.3",
+    "zendframework/zend-http": "^2.10"
   },
   "require-dev": {
     "swoole/ide-helper": "@dev"
