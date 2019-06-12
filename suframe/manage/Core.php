@@ -5,9 +5,8 @@ namespace suframe\manage;
 use suframe\core\components\Config;
 use suframe\core\components\console\Application;
 use suframe\core\components\console\Console;
+use suframe\core\components\event\EventManager;
 use suframe\core\traits\Singleton;
-use suframe\core\event\EventManager;
-use suframe\manage\events\Events;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
 /**
@@ -35,10 +34,10 @@ class Core
         $this->loadConfig();
         //注册事件
         $this->registerListener();
-        EventManager::get()->trigger(Events::E_CONSOLE_INIT_BEFORE, $this);
+        EventManager::get()->trigger('console.init.before', $this);
         // 注册命令组
         $this->getConsole()->registerGroups('suframe\\manage\\commands', __DIR__ . '/commands/');
-        EventManager::get()->trigger(Events::E_CONSOLE_INIT_AFTER, $this);
+        EventManager::get()->trigger('console.init.after', $this);
         return $this;
     }
 
@@ -50,10 +49,10 @@ class Core
      */
     public function run(array $args): void
     {
-        EventManager::get()->trigger(Events::E_CONSOLE_RUN_BEFORE, $this);
+        EventManager::get()->trigger('console.run.before', $this);
         $console = $this->getConsole();
         $console->run();
-        EventManager::get()->trigger(Events::E_CONSOLE_RUN_AFTER, $this);
+        EventManager::get()->trigger('console.run.after', $this);
     }
 
     /**

@@ -3,7 +3,7 @@
  * User: qian
  * Date: 2019/6/5 11:42
  */
-namespace suframe\core\event;
+namespace suframe\core\components\event;
 
 use suframe\core\traits\Singleton;
 use Zend\EventManager\EventManagerAwareInterface;

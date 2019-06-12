@@ -11,6 +11,7 @@ use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
 use Zend\EventManager\ListenerAggregateTrait;
+use Zend\Http\Request;
 
 class TcpListener implements ListenerAggregateInterface {
 	use ListenerAggregateTrait;
@@ -21,8 +22,8 @@ class TcpListener implements ListenerAggregateInterface {
 	 * @param int $priority
 	 */
 	public function attach(EventManagerInterface $events, $priority = 1) {
-		$this->listeners[] = $events->attach(Events::E_TCP_REQUEST, [$this, 'request'], $priority);
-		$this->listeners[] = $events->attach(Events::E_TCP_RESPONSE_AFTER, [$this, 'after'], $priority);
+		$this->listeners[] = $events->attach('tcp.request', [$this, 'request'], $priority);
+//		$this->listeners[] = $events->attach(Events::E_TCP_RESPONSE_AFTER, [$this, 'after'], $priority);
 	}
 
 	/**
@@ -30,16 +31,13 @@ class TcpListener implements ListenerAggregateInterface {
 	 * @param EventInterface $e
 	 */
 	public function request(EventInterface $e) {
-		$data = $e->getParams();
-        $request = \Zend\Http\Request::fromString($data['data']);
-        if($request->getUri() == '/favicon.ico'){
-            $data['data'] = null;
-            return;
-        }
+	    /** @var Request $request */
+        $request = $e->getParam('request');
         $headers = $request->getHeaders();
-        $headers->addHeaderLine('request_id', uniqid());
-        $headers->addHeaderLine('uid', rand(1, 9999));
-        $data['data'] = $request . '';
+        //暂时用最简单的方案生成
+        $headers->addHeaderLine('request_id', session_create_id());
+//        $headers->addHeaderLine('uid', rand(1, 9999));
+
 	}
 
 	/**

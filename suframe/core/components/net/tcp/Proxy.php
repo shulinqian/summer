@@ -1,6 +1,9 @@
 <?php
-
-namespace suframe\manage\components;
+/**
+ * User: qian
+ * Date: 2019/6/5 11:42
+ */
+namespace suframe\core\components\net\tcp;
 
 use suframe\core\traits\Singleton;
 
@@ -9,7 +12,7 @@ use suframe\core\traits\Singleton;
  * Class HttpProxy
  * @package suframe\manage\components
  */
-class TcpProxy {
+class Proxy {
 	use Singleton;
 	protected $counter = 0;
 	protected $resultError = 0;
@@ -40,10 +43,10 @@ class TcpProxy {
 	}
 
 	/**
-	 * @return TcpPool
+	 * @return Pool
 	 */
 	protected function getClient() {
-		return TcpPool::getInstance(5);
+		return Pool::getInstance(5);
 	}
 
 }

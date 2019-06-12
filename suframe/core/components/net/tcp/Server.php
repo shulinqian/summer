@@ -1,6 +1,6 @@
 <?php
 
-namespace suframe\core\net\tcp;
+namespace suframe\core\components\net\tcp;
 
 class Server {
 

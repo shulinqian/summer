@@ -4,7 +4,7 @@
  * Date: 2019/6/10 10:12
  */
 
-namespace suframe\manage\components;
+namespace suframe\core\components\net\tcp;
 
 use suframe\core\traits\Singleton;
 use Swoole\Client;
@@ -15,7 +15,7 @@ use Swoole\Coroutine\Channel;
  * Class TcpPool
  * @package suframe\manage\components
  */
-class TcpPool {
+class Pool {
 	use Singleton;
 
 	protected $maxReTry = 200;
