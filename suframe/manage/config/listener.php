@@ -1,4 +1,4 @@
 <?php
 return [
-	\suframe\manage\events\TcpListener::class,
+	\suframe\manage\events\HttpListener::class,
 ];

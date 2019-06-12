@@ -8,5 +8,6 @@ return [
 	'swoole' => [
 		'log_file' => SUMMER_APP_ROOT . 'runtime/swoole.log',
 		'pid_file' => SUMMER_APP_ROOT . 'runtime/pid.pid'
-	]
+	],
+    'dispatch_type' => 'http'
 ];

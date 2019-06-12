@@ -16,19 +16,25 @@ use Swoole\Coroutine\Channel;
  * @package suframe\manage\components
  */
 class Pool {
-	use Singleton;
 
 	protected $maxReTry = 200;
 	protected $timeout = 0.1;
+	protected $overflow = 0; //溢出连接
+	protected $overflowMax; //最大溢出连接
 
 	/**
 	 * @var Channel
 	 */
 	protected $pool;
+	protected $host;
+	protected $port;
 	protected $size;
 
-	public function __construct($size) {
+	public function __construct($host, $port, $size = 10, $overflowMax = null) {
+	    $this->host = $host;
+	    $this->port = $port;
 		$this->size = $size;
+		$this->overflowMax = $overflowMax ?: $size * 2;
         $this->createPool();
 	}
 
@@ -38,10 +44,15 @@ class Pool {
         $this->pool = new Channel($size);
 	}
 
+    /**
+     * @param Client $client
+     * @return bool
+     */
 	public function put($client) {
 	    if($this->pool->length() > $this->size){
             $client->close();
-	        return false;
+            $this->overflow--;
+            return false;
         }
 		$this->pool->push($client);
 	}
@@ -54,16 +65,29 @@ class Pool {
 	 * @return Client|null
 	 */
 	public function get() {
-//        echo "连接数" . $this->pool->length() . "\n";
         if($this->pool->length()){
+//            echo "连接池有连接\n";
             return $this->pool->pop($this->timeout);
         }
+        if($this->overflow > $this->overflowMax){
+            //超过最大长连接支持
+            return null;
+        }
+//        echo "获取新连接,当前总数{$this->overflow}, {$this->pool->length()} \n";
         $client = new Client(SWOOLE_SOCK_TCP | SWOOLE_KEEP);
-        $res = @$client->connect('127.0.0.1', 9502);
+        $res = @$client->connect($this->host, $this->port);
         if ($res) {
-            $this->put($client);
-            return $this->get();
+            $this->overflow++;
+            return $client;
         }
 	}
+
+    /**
+     * @return int
+     */
+    public function getOverflow(): int
+    {
+        return $this->overflow;
+    }
 
 }
