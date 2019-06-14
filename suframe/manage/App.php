@@ -81,12 +81,10 @@ class App
         }
         EventManager::get()->trigger('http.request', null, ['request' => &$request]);
         $out = $this->proxy->dispatch($server, $fd, $reactor_id, $request);
-        go(function () use ($request, $out){
-            EventManager::get()->trigger('http.response.after', null, [
-                'request' => $request,
-                'out' => $out,
-            ]);
-        });
+        EventManager::get()->trigger('http.response.after', null, [
+            'request' => $request,
+            'out' => $out,
+        ]);
     }
 
     /**
@@ -97,10 +95,10 @@ class App
      * @param $data
      */
     public function onReceiveTcp(\Swoole\Server $server, $fd, $reactor_id, $data) {
-        EventManager::get()->trigger('tcp.request', null, ['data' => &$data]);
+        EventManager::get()->trigger('tcp.request', $this, ['data' => &$data]);
         $out = $this->proxy->dispatch($server, $fd, $reactor_id, $data);
         go(function () use ($data, $out){
-            EventManager::get()->trigger('tcp.response.after', null, [
+            EventManager::get()->trigger('tcp.response.after', $this, [
                 'request' => $data,
                 'out' => $out,
             ]);
@@ -111,19 +109,17 @@ class App
      * 服务结束
      */
     public function onShutdown() {
-        EventManager::get()->trigger('tcp.shutDown', null, ['request' => &$request]);
+        EventManager::get()->trigger('tcp.shutDown', $this);
     }
 
     protected function initProxy(){
     	$config = [
-    		[
-    			'name' => 'news',
-    			'path' => '/news',
-				'host' => '127.0.0.1',
-				'port' => 9502,
-			],
-    		[
-    			'name' => 'goods',
+            [
+                'path' => '/news',
+                'host' => '127.0.0.1',
+                'port' => 9502,
+            ],
+            [
     			'path' => '/goods',
 				'host' => '127.0.0.1',
 				'port' => 9602,

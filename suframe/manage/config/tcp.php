@@ -9,5 +9,9 @@ return [
 		'log_file' => SUMMER_APP_ROOT . 'runtime/swoole.log',
 		'pid_file' => SUMMER_APP_ROOT . 'runtime/pid.pid'
 	],
-    'dispatch_type' => 'http'
+    'dispatch_type' => 'http',
+    'inside_server' => [
+        '0.0.0.0',
+        'port' => 9502,
+    ]
 ];

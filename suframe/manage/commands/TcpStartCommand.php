@@ -5,6 +5,7 @@ namespace suframe\manage\commands;
 use suframe\core\components\Config;
 use suframe\core\components\console\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class TcpStartCommand extends TcpBase {
@@ -18,6 +19,8 @@ class TcpStartCommand extends TcpBase {
 	 * @throws \Exception
 	 */
 	protected function execute(InputInterface $input, OutputInterface $output) {
+	    $this->customServer($input);
+
 		$rs = $this->sendSig(0);
 		if ($rs === true) {
             (new SymfonyStyle($input, $output))->warning('server has started');
@@ -34,11 +37,29 @@ class TcpStartCommand extends TcpBase {
         $app->run($input, $output);
 	}
 
+    /**
+     * 命令行自定server
+     * @param InputInterface $input
+     */
+	protected function customServer(InputInterface $input){
+	    $config = Config::getInstance();
+        if ($host = $input->hasParameterOption(['--host', '-H'])) {
+            $config['tcp']['server']['host'] = $host;
+        }
+        if ($port = $input->hasParameterOption(['--port', '-p'])) {
+            $config['tcp']['server']['port'] = $port;
+            $config['tcp']['swoole']['log_file'] = $port . ".{$port}.log";
+            $config['tcp']['swoole']['pid_file'] = $port . ".{$port}.pid";;
+        }
+    }
+
 	/**
 	 * 配置
 	 */
 	protected function configure() {
 		$this->setName('tcp:start')
+			->addOption('host', 'H', InputOption::VALUE_OPTIONAL, 'custom host')
+			->addOption('port', 'P', InputOption::VALUE_OPTIONAL, 'custom port')
 			->addOption('daemon', 'd', null, 'run server on the background');
 	}
 

@@ -62,9 +62,10 @@ class Proxy {
 		if(!$path){
 			return false;
 		}
-		foreach ($this->config as $item) {
-			if($item['path'] == $path){
-				return $this->pools[$item['name']]['pool'];
+		foreach ($this->pools as $poolPath => $item) {
+			if($poolPath == $path){
+			    $key = array_rand($item);
+				return $item[$key];
 			}
 		}
 		$path = explode('/', $path);
@@ -86,25 +87,28 @@ class Proxy {
 	 * @return bool
 	 */
 	public function addPool($config){
-		if(isset($this->pools[$config['name']])){
-			return false;
-		}
-		$this->pools[$config['name']] = [
-			'path' => rtrim($config['path'], '/'),
-			'pool' => new Pool($config['host'], $config['port'], $config['size'] ?? 1, $config['overflowMax'] ?? null)
-		];
+        $key = md5($config['host'] . ':' . $config['port']);
+        $path = $config['path'];
+        if(!isset($this->pools[$path])){
+            $this->pools[$path] = [];
+        }
+        if(isset($this->pools[$path][$key]) && $this->pools[$path][$key]){
+            return false;
+        }
+        $this->pools[$path][$key] = new Pool($config['host'], $config['port'], $config['size'] ?? 1, $config['overflowMax'] ?? null);
 	}
 
 	/**
 	 * 动态删除连接池
 	 * @param $name
 	 */
-	public function removePool($name){
-		if(isset($this->pools[$name])){
-			while ($client = $this->pools[$name]['pool']->get()){
+	public function removePool($path, $host, $port){
+        $key = md5($host . ':' . $port);
+		if(isset($this->pools[$path]) && isset($this->pools[$path][$key])){
+			while ($client = $this->pools[$path][$key]->get()){
 				$client->close();
 			}
-			unset($this->pools[$name]);
+			unset($this->pools[$path][$key]);
 		}
 	}
 

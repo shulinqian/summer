@@ -34,7 +34,7 @@ class Pool {
 	    $this->host = $host;
 	    $this->port = $port;
 		$this->size = $size;
-		$this->overflowMax = $overflowMax ?: $size * 2;
+		$this->overflowMax = $overflowMax ?: $size * 4;
         $this->createPool();
 	}
 
@@ -65,19 +65,20 @@ class Pool {
 	 * @return Client|null
 	 */
 	public function get() {
+//        echo "连接池有连接:{$this->pool->length()}\n";
         if($this->pool->length()){
-//            echo "连接池有连接\n";
             return $this->pool->pop($this->timeout);
         }
         if($this->overflow > $this->overflowMax){
             //超过最大长连接支持
             return null;
         }
-//        echo "获取新连接,当前总数{$this->overflow}, {$this->pool->length()} \n";
+
         $client = new Client(SWOOLE_SOCK_TCP | SWOOLE_KEEP);
         $res = @$client->connect($this->host, $this->port);
         if ($res) {
             $this->overflow++;
+//            echo "获取新连接,当前总数{$this->overflow}, {$this->pool->length()} \n";
             return $client;
         }
 	}
