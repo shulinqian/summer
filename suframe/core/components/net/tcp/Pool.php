@@ -30,7 +30,7 @@ class Pool {
 	protected $port;
 	protected $size;
 
-	public function __construct($host, $port, $size = 10, $overflowMax = null) {
+	public function __construct($host, $port, $size = 1, $overflowMax = null) {
 	    $this->host = $host;
 	    $this->port = $port;
 		$this->size = $size;

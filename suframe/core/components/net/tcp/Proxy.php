@@ -5,7 +5,7 @@
  */
 namespace suframe\core\components\net\tcp;
 
-use suframe\core\traits\Singleton;
+use Zend\Http\Request;
 
 /**
  * tcp 代理
@@ -15,31 +15,97 @@ use suframe\core\traits\Singleton;
 class Proxy {
 	protected $counter = 0;
 	protected $resultError = 0;
-	protected $pool;
+	protected $pools;
+	protected $config;
 
-	public function __construct() {
-	    $this->pool = new Pool('127.0.0.1', 9502);
+	public function __construct($config) {
+		$this->config = $config;
+		$this->initPools();
 	}
 
-	public function dispatch(\Swoole\Server $server, $fd, $reactor_id, $info) {
-		$client = $this->pool->get();
-		if ($client) {
-			//链接端口可能会出警告
-			$ret = @$client->send($info);
-            if($ret){
-				//无法判断tcp 因为应用层无法获得底层TCP连接的状态，执行send或recv时应用层与内核发生交互，才能得到真实的连接可用状态
-				$rs = $client->recv();
-				if ($rs) {
-                    $this->pool->put($client);
-                    $server->send($fd, $rs);
-                    $server->close($fd);
-					return $rs;
-				}
-            }
-			$client->close();
+	protected function initPools(){
+		foreach ($this->config as $item) {
+			$this->addPool($item);
 		}
+	}
+
+	public function dispatch(\Swoole\Server $server, $fd, $reactor_id, Request $request) {
+		$pool = $this->getPool($request->getUri()->getPath());
+		if($pool){
+			$client = $pool->get();
+			if ($client) {
+				//链接端口可能会出警告
+				$ret = @$client->send($request . '');
+				if($ret){
+					//无法判断tcp 因为应用层无法获得底层TCP连接的状态，执行send或recv时应用层与内核发生交互，才能得到真实的连接可用状态
+					$rs = $client->recv();
+					if ($rs) {
+						$pool->put($client);
+						$server->send($fd, $rs);
+						$server->close($fd);
+						return $rs;
+					}
+				}
+				$client->close();
+			}
+		}
+
         $server->close($fd);
         return null;
+	}
+
+	/**
+	 * @param $uri
+	 * @return bool|Pool
+	 */
+	protected function getPool($path){
+		if(!$path){
+			return false;
+		}
+		foreach ($this->config as $item) {
+			if($item['path'] == $path){
+				return $this->pools[$item['name']]['pool'];
+			}
+		}
+		$path = explode('/', $path);
+		array_pop($path);
+		$path = implode('/', $path);
+		return $this->getPool($path);
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getPools() {
+		return $this->pools;
+	}
+
+	/**
+	 * 动态增加连接池
+	 * @param $config
+	 * @return bool
+	 */
+	public function addPool($config){
+		if(isset($this->pools[$config['name']])){
+			return false;
+		}
+		$this->pools[$config['name']] = [
+			'path' => rtrim($config['path'], '/'),
+			'pool' => new Pool($config['host'], $config['port'], $config['size'] ?? 1, $config['overflowMax'] ?? null)
+		];
+	}
+
+	/**
+	 * 动态删除连接池
+	 * @param $name
+	 */
+	public function removePool($name){
+		if(isset($this->pools[$name])){
+			while ($client = $this->pools[$name]['pool']->get()){
+				$client->close();
+			}
+			unset($this->pools[$name]);
+		}
 	}
 
 }

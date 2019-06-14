@@ -34,7 +34,7 @@ class App
         $tcp = new Server();
         $this->config = $config->get('tcp')->toArray();
         //设置代理
-        $this->proxy = new Proxy();
+        $this->initProxy();
         //守护进程运行
         if (true === $input->hasParameterOption(['--daemon', '-d'], true)) {
             $this->config['swoole']['daemonize'] = 1;
@@ -80,7 +80,7 @@ class App
             return;
         }
         EventManager::get()->trigger('http.request', null, ['request' => &$request]);
-        $out = $this->proxy->dispatch($server, $fd, $reactor_id, $request->toString());
+        $out = $this->proxy->dispatch($server, $fd, $reactor_id, $request);
         go(function () use ($request, $out){
             EventManager::get()->trigger('http.response.after', null, [
                 'request' => $request,
@@ -114,5 +114,29 @@ class App
         EventManager::get()->trigger('tcp.shutDown', null, ['request' => &$request]);
     }
 
+    protected function initProxy(){
+    	$config = [
+    		[
+    			'name' => 'news',
+    			'path' => '/news',
+				'host' => '127.0.0.1',
+				'port' => 9502,
+			],
+    		[
+    			'name' => 'goods',
+    			'path' => '/goods',
+				'host' => '127.0.0.1',
+				'port' => 9602,
+			],
+		];
+		$this->proxy = new Proxy($config);
+	}
+
+	/**
+	 * @return Proxy
+	 */
+	public function getProxy(): Proxy {
+		return $this->proxy;
+	}
 
 }
