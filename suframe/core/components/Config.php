@@ -18,7 +18,7 @@ class Config extends \Zend\Config\Config {
 	 */
 	static function getInstance(...$args) {
 		if (!isset(self::$instance)) {
-			self::$instance = new static(...$args);
+			self::$instance = new static($args[0], true);
 			self::$instance->loadFileByName(__DIR__ . '/../config/console.php');
 		}
 		return self::$instance;
@@ -64,9 +64,9 @@ class Config extends \Zend\Config\Config {
 	 * @param $file
 	 * @return \Zend\Config\Config
 	 */
-	public function loadFile($file){
+	public function loadFile($file, $allowModifications = true){
 		$data = $this->aggregator($file);
-		$config = new \Zend\Config\Config($data);
+		$config = new \Zend\Config\Config($data, $allowModifications);
 		return $this->merge($config);
 	}
 
@@ -76,7 +76,7 @@ class Config extends \Zend\Config\Config {
 	 * @param null $name
 	 * @return $this|\Zend\Config\Config
 	 */
-	public function loadFileByName($file, $name = null) {
+	public function loadFileByName($file, $name = null, $allowModifications = true) {
 		if (!is_file($file)) {
 			return $this;
 		}
@@ -84,7 +84,7 @@ class Config extends \Zend\Config\Config {
 			$name = substr($file, strrpos($file, DIRECTORY_SEPARATOR) + 1, strrpos($file, '.') - strlen($file));
 		}
 		$data = $this->aggregator($file);
-		$config = new \Zend\Config\Config([$name => $data]);
+		$config = new \Zend\Config\Config([$name => $data], $allowModifications);
 		return $this->merge($config);
 	}
 
@@ -93,12 +93,12 @@ class Config extends \Zend\Config\Config {
 	 * @param $files
 	 * @return $this
 	 */
-	public function loadFilesByName($files) {
+	public function loadFilesByName($files, $allowModifications = true) {
 		if (is_string($files)) {
 			$files = [$files];
 		}
 		foreach ($files as $file) {
-			$this->loadFileByName($file);
+			$this->loadFileByName($file, $allowModifications);
 		}
 		return $this;
 	}

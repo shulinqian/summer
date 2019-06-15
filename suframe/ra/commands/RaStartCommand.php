@@ -1,6 +1,5 @@
 <?php
-
-namespace suframe\manage\commands;
+namespace suframe\ra\commands;
 
 use suframe\core\components\Config;
 use suframe\core\components\console\SymfonyStyle;
@@ -8,7 +7,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class TcpStartCommand extends TcpBase {
+class RaStartCommand extends RaBase {
 
 	/**
 	 * 执行
@@ -46,10 +45,10 @@ class TcpStartCommand extends TcpBase {
         if ($host = $input->hasParameterOption(['--host', '-H'])) {
             $config['tcp']['server']['host'] = $host;
         }
-        if ($port = $input->getParameterOption(['--port', '-P'])) {
+        if ($port = $input->hasParameterOption(['--port', '-p'])) {
             $config['tcp']['server']['port'] = $port;
-            $config['tcp']['swoole']['log_file'] .= ".{$port}.log";
-            $config['tcp']['swoole']['pid_file'] .= ".{$port}.pid";
+            $config['tcp']['swoole']['log_file'] = $port . ".{$port}.log";
+            $config['tcp']['swoole']['pid_file'] = $port . ".{$port}.pid";;
         }
     }
 

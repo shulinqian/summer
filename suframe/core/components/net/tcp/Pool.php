@@ -39,7 +39,6 @@ class Pool {
 	}
 
 	public function createPool($size = null) {
-		$this->creating = true;
 		$size = $this->size;
         $this->pool = new Channel($size);
 	}
