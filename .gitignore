@@ -1,6 +1,7 @@
 /app/summer.ini
 /app/config/
 /app/runtime/
+/app/ra/
 /vendor/
 composer.lock
 .idea

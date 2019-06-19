@@ -1,12 +1,12 @@
 <?php
-namespace suframe\ra\commands;
+namespace suframe\core\commands\tcp;
 
 use suframe\core\components\Config;
 use suframe\core\components\console\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class RaCheckCommand extends RaBase {
+class TcpCheckCommand extends TcpBase {
 
     /**
      * kill by shell: ps -ef |grep summer|cut -c 11-14 |xargs kill -9

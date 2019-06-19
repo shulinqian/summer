@@ -1,5 +1,6 @@
 <?php
 return [
     'console' => require __DIR__ . '/console.php',
-    'ra' => require __DIR__ . '/ra.php',
+    'tcp' => require __DIR__ . '/tcp.php',
+    'servers' => [],
 ];

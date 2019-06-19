@@ -18,8 +18,7 @@ class Config extends \Zend\Config\Config {
 	 */
 	static function getInstance(...$args) {
 		if (!isset(self::$instance)) {
-			self::$instance = new static($args[0], true);
-			self::$instance->loadFileByName(__DIR__ . '/../config/console.php');
+			self::$instance = new static($args[0] ?? [], true);
 		}
 		return self::$instance;
 	}

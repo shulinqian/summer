@@ -5,9 +5,9 @@ namespace suframe\ra;
 use suframe\core\components\Config;
 use suframe\core\components\console\SymfonyStyle;
 use suframe\core\components\event\EventManager;
-use suframe\core\components\net\tcp\Proxy;
 use suframe\core\components\net\tcp\Server;
 use suframe\core\traits\Singleton;
+use suframe\ra\components\Proxy;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -32,7 +32,7 @@ class App
         $this->io = new SymfonyStyle($input, $output);
         $config = Config::getInstance();
         $tcp = new Server();
-        $this->config = $config->get('ra')->toArray();
+        $this->config = $config->get('tcp')->toArray();
 		//设置代理
 		$this->initProxy();
         //守护进程运行
@@ -87,7 +87,7 @@ class App
 
 	protected function initProxy(){
 		//这里应该是action代理
-		$this->proxy = new Proxy([]);
+		$this->proxy = new Proxy();
 	}
 
 }

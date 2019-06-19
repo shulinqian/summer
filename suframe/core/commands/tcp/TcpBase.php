@@ -1,11 +1,11 @@
 <?php
-namespace suframe\ra\commands;
+namespace suframe\core\commands\tcp;
 
 use suframe\core\components\Config;
 use Symfony\Component\Console\Command\Command;
 use swoole_process;
 
-abstract class RaBase extends Command
+abstract class TcpBase extends Command
 {
 
     protected function sendSig($sig){

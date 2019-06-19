@@ -1,8 +1,5 @@
 <?php
-
-
-namespace suframe\manage\commands;
-
+namespace suframe\core\commands\tcp;
 
 use suframe\core\components\console\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;

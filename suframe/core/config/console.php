@@ -9,11 +9,8 @@ $logo = <<<EOF
 EOF;
 
 return [
-	'name' => 'summer framework',
-	'description' => 'welcome to use summer framework',
 	'logoText' => $logo,
 	'logoStyle' => 'fg=green;',
 	'version' => '0.0.1',
-	'publishAt' => '2019.06.04',
-	'updateAt' => '2019.06.04',
+    'coreCommands' => []
 ];

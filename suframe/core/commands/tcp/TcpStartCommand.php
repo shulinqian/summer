@@ -1,5 +1,5 @@
 <?php
-namespace suframe\ra\commands;
+namespace suframe\core\commands\tcp;
 
 use suframe\core\components\Config;
 use suframe\core\components\console\SymfonyStyle;
@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class RaStartCommand extends RaBase {
+class TcpStartCommand extends TcpBase {
 
 	/**
 	 * 执行
