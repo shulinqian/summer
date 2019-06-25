@@ -18,7 +18,7 @@ class Server extends Base
         $key = md5($args['ip'] . $args['port']);
         if($pathConfig){
             if($pathConfig->get($key)){
-                return true;
+                return 'exist';
             }
             $argsData = [
                 $key => ['ip' => $args['ip'], 'port' => $args['port']]
@@ -48,6 +48,16 @@ class Server extends Base
     }
 
     /**
+     * 获取全部服务
+     * @return false|string
+     */
+    public function get(){
+        $config = Config::getInstance();
+        $servers = $config->get('servers');
+        return json_encode($servers->toArray());
+    }
+
+    /**
      * 同步服务
      * @param $server
      */
@@ -61,12 +71,8 @@ class Server extends Base
                     continue;
                 }
                 $client->send("UPDATE_SERVERS");
-                $rs = $client->recv();
-                if($rs = 'ok'){
-                    //更新服务状态为已更新
-                } else {
-                    //更新服务状态为更新失败
-                }
+                $client->recv();
+                $client->close();
             }
 
         }
