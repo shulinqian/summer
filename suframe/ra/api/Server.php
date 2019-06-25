@@ -5,6 +5,7 @@ namespace suframe\ra\api;
 
 
 use suframe\core\components\Config;
+use Swoole\Client;
 use Zend\Config\Writer\PhpArray;
 
 class Server extends Base
@@ -43,6 +44,31 @@ class Server extends Base
             return true;
         } catch (\Exception $e){
             return false;
+        }
+    }
+
+    /**
+     * 同步服务
+     * @param $server
+     */
+    protected function syncServers($config){
+        //获取服务列表，通知更新
+        foreach ($config as $path => $servers){
+            foreach ($servers as $server) {
+                $client = new Client(SWOOLE_SOCK_TCP);
+                if (!$client->connect($server['host'], $server['port'], -1))
+                {
+                    continue;
+                }
+                $client->send("UPDATE_SERVERS");
+                $rs = $client->recv();
+                if($rs = 'ok'){
+                    //更新服务状态为已更新
+                } else {
+                    //更新服务状态为更新失败
+                }
+            }
+
         }
     }
 

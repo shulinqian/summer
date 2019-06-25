@@ -69,6 +69,7 @@ class App
      */
     public function onReceiveTcp(\Swoole\Server $server, $fd, $reactor_id, $data) {
         EventManager::get()->trigger('tcp.request', $this, ['data' => &$data]);
+
         $out = $this->proxy->dispatch($server, $fd, $reactor_id, $data);
         go(function () use ($data, $out){
             EventManager::get()->trigger('tcp.response.after', $this, [

@@ -23,26 +23,22 @@ class Proxy
         $apiName[] = $className;
         $apiName = implode('\\', $apiName);
         $apiClass = '\suframe\ra\api\\' . $apiName;
-        if(!class_exists($apiName)){
+
+        if(!class_exists($apiClass)){
             $server->send($fd, json_encode(['code' => 404, 'msg' => 'api class not found']));
             $server->close($fd);
+            return;
         }
         $api = new $apiClass;
-        if(method_exists($api, $methodName)){
+        if(!method_exists($api, $methodName)){
             $server->send($fd, json_encode(['code' => 404, 'msg' => 'api method not found']));
             $server->close($fd);
+            return;
         }
         $rs = $api->$methodName($data['args']);
-        $rs = json_encode(['code' => 200, $rs]);
         $response  = new Response();
         $response->setStatusCode(Response::STATUS_CODE_200);
-        $response->getHeaders()->addHeaders([
-            'HeaderField1' => 'header-field-value',
-            'HeaderField2' => 'header-field-value2',
-        ]);
         $response->setContent($rs);
-
-        echo $response->toString(), "\n\n";
         $server->send($fd, $response->toString());
         $server->close($fd);
         return $rs;
