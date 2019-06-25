@@ -27,5 +27,5 @@ switch ($arg){
 }
 
 $client->send(json_encode($data));
-echo $client->recv();
+echo $client->recv(), "\n";
 $client->close();

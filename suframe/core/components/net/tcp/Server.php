@@ -5,14 +5,15 @@ namespace suframe\core\components\net\tcp;
 class Server {
 
 	/**
-	 * @var \Swoole\Http\Server
+	 * @var \Swoole\Server
 	 */
 	protected $server;
 
-	/**
-	 * @param array $config
-	 * @return \Swoole\Http\Server
-	 */
+    /**
+     * @param array $config
+     * @return \Swoole\Server
+     * @throws \Exception
+     */
 	public function create(array $config) {
 		$this->server = $server = new \Swoole\Server($config['server']['listen'], $config['server']['port'], SWOOLE_PROCESS, SWOOLE_SOCK_TCP);
 		$this->set($config['swoole']);

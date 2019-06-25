@@ -1,6 +1,7 @@
 <?php
 namespace suframe\ra\components;
 
+use Swoole\Http\Request;
 use Zend\Http\Response;
 
 class Proxy
@@ -8,14 +9,15 @@ class Proxy
 
     /**
      * 服务代理转发
-     * @param \Swoole\Server $server
-     * @param $fd
-     * @param $reactor_id
-     * @param $data
-     * @return mixed
+     * @param Request $request
+     * @return false|string
      */
-    public function dispatch(\Swoole\Server $server, $fd, $reactor_id, $data){
-        $data = json_decode($data, true);
+    public function dispatch(Request $request){
+        $data = $request->get;
+        if(!isset($data['api'])){
+            return $this->response404('api name missing');
+        }
+
         $apiName = explode('/', $data['api']);
         $methodName = array_pop($apiName);
         $className = array_pop($apiName);
@@ -25,23 +27,23 @@ class Proxy
         $apiClass = '\suframe\ra\api\\' . $apiName;
 
         if(!class_exists($apiClass)){
-            $server->send($fd, json_encode(['code' => 404, 'msg' => 'api class not found']));
-            $server->close($fd);
-            return null;
+            return $this->response404('api class not found');
         }
         $api = new $apiClass;
         if(!method_exists($api, $methodName)){
-            $server->send($fd, json_encode(['code' => 404, 'msg' => 'api method not found']));
-            $server->close($fd);
-            return null;
+            return $this->response404('api method not found');
         }
-        $rs = $api->$methodName($data['args']);
-        $response  = new Response();
-        $response->setStatusCode(Response::STATUS_CODE_200);
-        $response->setContent($rs);
-        $server->send($fd, $response->toString());
-        $server->close($fd);
-        return $rs;
+        try{
+            $args = $data['args'] ?? [];
+            $rs = $api->$methodName($args);
+            return json_encode(['code' => 200, $rs]);
+        } catch (\Exception $e){
+            return json_encode(['code' => $e->getCode(), 'msg' => $e->getMessage()]);
+        }
+    }
+
+    public function response404($message){
+        return json_encode(['code' => 404, 'msg' => $message]);
     }
 
 }

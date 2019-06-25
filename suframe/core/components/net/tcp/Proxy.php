@@ -29,7 +29,7 @@ class Proxy {
 		}
 	}
 
-	public function dispatch(\Swoole\Server $server, $fd, $reactor_id, Request $request) {
+	public function dispatch(Request $request) {
 		$pool = $this->getPool($request->getUri()->getPath());
 		if($pool){
 			$client = $pool->get();
@@ -41,17 +41,12 @@ class Proxy {
 					$rs = $client->recv();
 					if ($rs) {
 						$pool->put($client);
-						echo "\n\n", $rs, "\n\n";
-						$server->send($fd, $rs);
-						$server->close($fd);
 						return $rs;
 					}
 				}
 				$client->close();
 			}
 		}
-
-        $server->close($fd);
         return null;
 	}
 

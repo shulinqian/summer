@@ -1,12 +1,10 @@
 <?php
 namespace suframe\server;
 
-class Core {
+use suframe\core\traits\Singleton;
 
-	public function run(){
-		//加载配置
+class Core extends  \suframe\core\Core {
 
-		//
-	}
+    use Singleton;
 
 }
