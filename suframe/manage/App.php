@@ -53,7 +53,6 @@ class App
         EventManager::get()->trigger('tcp.run.after', $this, $tcp);
     }
 
-
     /**
      * 服务启动回调
      */
@@ -99,7 +98,9 @@ class App
      */
     public function onReceiveTcp(\Swoole\Server $server, $fd, $reactor_id, $data) {
         EventManager::get()->trigger('tcp.request', $this, ['data' => &$data]);
-        $out = $this->proxy->dispatch($server, $fd, $reactor_id, $data);
+        $out = $this->proxy->dispatch($data);
+        $server->send($fd, $out);
+        $server->close($fd);
         go(function () use ($data, $out){
             EventManager::get()->trigger('tcp.response.after', $this, [
                 'request' => $data,

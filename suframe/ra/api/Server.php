@@ -5,6 +5,7 @@ namespace suframe\ra\api;
 
 
 use suframe\core\components\Config;
+use suframe\ra\components\SyncServers;
 use Swoole\Client;
 use Zend\Config\Writer\PhpArray;
 
@@ -41,6 +42,7 @@ class Server extends Base
         $file = SUMMER_APP_ROOT . 'config/servers.php';
         try{
             $writer->toFile($file, $server);
+            SyncServers::getInstance()->notify();
             return true;
         } catch (\Exception $e){
             return false;
@@ -55,27 +57,6 @@ class Server extends Base
         $config = Config::getInstance();
         $servers = $config->get('servers');
         return json_encode($servers->toArray());
-    }
-
-    /**
-     * 同步服务
-     * @param $server
-     */
-    protected function syncServers($config){
-        //获取服务列表，通知更新
-        foreach ($config as $path => $servers){
-            foreach ($servers as $server) {
-                $client = new Client(SWOOLE_SOCK_TCP);
-                if (!$client->connect($server['host'], $server['port'], -1))
-                {
-                    continue;
-                }
-                $client->send("UPDATE_SERVERS");
-                $client->recv();
-                $client->close();
-            }
-
-        }
     }
 
 }

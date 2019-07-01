@@ -36,7 +36,7 @@ class Proxy
         try{
             $args = $data['args'] ?? [];
             $rs = $api->$methodName($args);
-            return json_encode(['code' => 200, $rs]);
+            return json_encode(['code' => 200, 'data' => $rs]);
         } catch (\Exception $e){
             return json_encode(['code' => $e->getCode(), 'msg' => $e->getMessage()]);
         }

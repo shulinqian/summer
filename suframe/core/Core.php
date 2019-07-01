@@ -43,11 +43,11 @@ abstract class Core
 
     /**
      * 控制台启动
-     * @param array $args
      * @return void
      * @throws \ReflectionException
+     * @throws \Exception
      */
-    public function run(array $args): void
+    public function run(): void
     {
         EventManager::get()->trigger('console.run.before', $this);
         $console = $this->getConsole();

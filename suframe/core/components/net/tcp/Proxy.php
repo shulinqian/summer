@@ -30,25 +30,42 @@ class Proxy {
 	}
 
 	public function dispatch(Request $request) {
-		$pool = $this->getPool($request->getUri()->getPath());
-		if($pool){
-			$client = $pool->get();
-			if ($client) {
-				//链接端口可能会出警告
-				$ret = @$client->send($request . '');
-				if($ret){
-					//无法判断tcp 因为应用层无法获得底层TCP连接的状态，执行send或recv时应用层与内核发生交互，才能得到真实的连接可用状态
-					$rs = $client->recv();
-					if ($rs) {
-						$pool->put($client);
-						return $rs;
-					}
-				}
-				$client->close();
-			}
-		}
-        return null;
+	    $path = $request->getUri()->getPath();
+	    $data = $request . '';
+	    $this->sendData($path, $data);
 	}
+
+	public function dispatchData($data){
+	    $dataArr = json_decode($data, true);
+	    if(!$dataArr){
+	        return false;
+        }
+	    $path = $dataArr['path'] ?? '';
+	    if(!$path){
+	        return false;
+        }
+        $this->sendData($path, $data);
+    }
+
+    public function sendData($path, $data = ''){
+        $pool = $this->getPool($path);
+        if($pool){
+            $client = $pool->get();
+            if ($client) {
+                //链接端口可能会出警告
+                $ret = @$client->send($data);
+                if($ret){
+                    //无法判断tcp 因为应用层无法获得底层TCP连接的状态，执行send或recv时应用层与内核发生交互，才能得到真实的连接可用状态
+                    $rs = $client->recv();
+                    if ($rs) {
+                        $pool->put($client);
+                        return $rs;
+                    }
+                }
+                $client->close();
+            }
+        }
+    }
 
 	/**
 	 * @param $uri

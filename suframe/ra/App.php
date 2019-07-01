@@ -41,6 +41,7 @@ class App
         if (true === $input->hasParameterOption(['--daemon', '-d'], true)) {
             $this->config['swoole']['daemonize'] = 1;
         }
+
         //创建启动服务
         $tcp->create($this->config);
         EventManager::get()->trigger('tcp.run.before', $this, $tcp);
