@@ -13,7 +13,7 @@ use Swoole\Coroutine\Channel;
 /**
  * tcp连接池
  * Class TcpPool
- * @package suframe\manage\components
+ * @package suframe\proxy\components
  */
 class Pool {
 

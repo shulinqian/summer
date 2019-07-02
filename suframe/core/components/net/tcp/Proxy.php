@@ -10,7 +10,7 @@ use Zend\Http\Request;
 /**
  * tcp 代理
  * Class HttpProxy
- * @package suframe\manage\components
+ * @package suframe\proxy\components
  */
 class Proxy {
 	protected $counter = 0;
@@ -32,7 +32,7 @@ class Proxy {
 	public function dispatch(Request $request) {
 	    $path = $request->getUri()->getPath();
 	    $data = $request . '';
-	    $this->sendData($path, $data);
+	    return $this->sendData($path, $data);
 	}
 
 	public function dispatchData($data){
@@ -44,7 +44,7 @@ class Proxy {
 	    if(!$path){
 	        return false;
         }
-        $this->sendData($path, $data);
+        return $this->sendData($path, $data);
     }
 
     public function sendData($path, $data = ''){

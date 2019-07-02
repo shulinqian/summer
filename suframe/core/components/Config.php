@@ -40,6 +40,7 @@ class Config extends \Zend\Config\Config {
 	public function get($name, $default = null)
 	{
 		$names = explode('.', $name);
+		/** @var Config $value */
 		$value = '';
 		foreach ($names as $item) {
 			if($value){
@@ -51,11 +52,11 @@ class Config extends \Zend\Config\Config {
 				if (array_key_exists($item, $this->data)) {
 					$value = $this->data[$item];
 				} else {
-					return null;
+					return $default;
 				}
 			}
 		}
-		return $value;
+		return $value ?: $default;
 	}
 
 	/**

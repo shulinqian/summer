@@ -22,7 +22,7 @@ class Proxy
         $className = ucfirst($className);
         $apiName[] = $className;
         $apiName = implode('\\', $apiName);
-        $apiClass = '\suframe\ra\api\\' . $apiName;
+        $apiClass = '\suframe\register\api\\' . $apiName;
 
         if(!class_exists($apiClass)){
             $server->send($fd, json_encode(['code' => 404, 'msg' => 'api class not found']));

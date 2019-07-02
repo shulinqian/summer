@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\ConsoleOutput;
  * summer framework manage
  * manage的主程序就是控制台，通过相应的command和controller完成功能
  * Class Core
- * @package suframe\manage
+ * @package suframe\proxy
  */
 abstract class Core
 {

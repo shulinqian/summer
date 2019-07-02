@@ -1,13 +1,14 @@
 <?php
 
-namespace suframe\server;
+namespace suframe\proxy;
 
 use suframe\core\components\Config;
 use suframe\core\components\console\SymfonyStyle;
 use suframe\core\components\event\EventManager;
+use suframe\core\components\net\tcp\Proxy;
 use suframe\core\components\net\tcp\Server;
+use suframe\core\components\proxy\Client;
 use suframe\core\traits\Singleton;
-use suframe\register\components\Proxy;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -33,17 +34,20 @@ class App
         $config = Config::getInstance();
         $tcp = new Server();
         $this->config = $config->get('tcp')->toArray();
-		//设置代理
-		$this->initProxy();
+        //设置代理
+        $this->initProxy();
         //守护进程运行
         if (true === $input->hasParameterOption(['--daemon', '-d'], true)) {
             $this->config['swoole']['daemonize'] = 1;
         }
+
         //创建启动服务
         $tcp->create($this->config);
         EventManager::get()->trigger('tcp.run.before', $this, $tcp);
         $server = $tcp->getServer();
-        $server->on('receive', [$this, 'onReceiveTcp']);
+        //转发类型，http需要拆包过滤
+        $dispatch_type = $this->config['dispatch_type'] ?? 'http';
+        $server->on('receive', [$this, 'onReceive' . ucfirst($dispatch_type)]);
         $server->on('start', [$this, 'onStart']);
         $server->on('shutdown', [$this, 'onShutdown']);
         $server->start();
@@ -54,10 +58,37 @@ class App
      * 服务启动回调
      */
     public function onStart() {
-        $this->io->success('ra server is running');
+        $this->io->success('tcp server is running');
         $ip = swoole_get_local_ip();
         $listen = $this->config['server']['listen'] == '0.0.0.0' ? array_shift($ip) : $this->config['server']['listen'];
-        $this->io->text('<info>ra server:</info> ' . $listen . ':' . $this->config['server']['port']);
+        $this->io->text('<info>open:</info> ' . $listen . ':' . $this->config['server']['port']);
+    }
+
+    /**
+     * http请求回调
+     * @param \Swoole\Server $server
+     * @param $fd
+     * @param $reactor_id
+     * @param $data
+     */
+    public function onReceiveHttp(\Swoole\Server $server, $fd, $reactor_id, $data) {
+        if(!$data || !$fd){
+            return;
+        }
+        var_dump($data);
+        $request = \Zend\Http\Request::fromString($data);
+        if($request->getUri() == '/favicon.ico'){
+            return;
+        }
+        EventManager::get()->trigger('http.request', null, ['request' => &$request]);
+        $out = $this->proxy->dispatch($request);
+        $out && $server->send($fd, $out);
+        $server->close($fd);
+
+        EventManager::get()->trigger('http.response.after', null, [
+            'request' => $request,
+            'out' => $out,
+        ]);
     }
 
     /**
@@ -69,8 +100,9 @@ class App
      */
     public function onReceiveTcp(\Swoole\Server $server, $fd, $reactor_id, $data) {
         EventManager::get()->trigger('tcp.request', $this, ['data' => &$data]);
-
-        $out = $this->proxy->dispatch($server, $fd, $reactor_id, $data);
+        $out = $this->proxy->dispatch($data);
+        $server->send($fd, $out);
+        $server->close($fd);
         go(function () use ($data, $out){
             EventManager::get()->trigger('tcp.response.after', $this, [
                 'request' => $data,
@@ -86,9 +118,20 @@ class App
         EventManager::get()->trigger('tcp.shutDown', $this);
     }
 
-	protected function initProxy(){
-		//这里应该是action代理
-		$this->proxy = new Proxy();
+    /**
+     * @throws \Exception
+     */
+    protected function initProxy(){
+        Client::getInstance()->register();
+        $this->proxy = new Proxy([]);
+
+	}
+
+	/**
+	 * @return Proxy
+	 */
+	public function getProxy(): Proxy {
+		return $this->proxy;
 	}
 
 }
