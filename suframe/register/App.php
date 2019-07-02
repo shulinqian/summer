@@ -71,14 +71,6 @@ class App
      * @param $data
      */
     public function onRequest(Request $request, Response $response) {
-        var_dump($request->get);
-
-        $cli = new \Swoole\Coroutine\Http\Client('127.0.0.1', 9501);
-        $cli->post('/summer', array("command" => 'UPDATE_SERVERS'));
-        $rs = $cli->body;
-        var_dump($rs);
-        $cli->close();
-
         if($request->get === null){
             $response->status(404);
             $response->write('Not Found');
@@ -87,6 +79,7 @@ class App
         EventManager::get()->trigger('tcp.request', $this, ['request' => &$request]);
         $out = $this->proxy->dispatch($request);
         $response->write($out);
+        var_dump($out);
         go(function () use ($request, $out){
             EventManager::get()->trigger('tcp.response.after', $this, [
                 'request' => $request,

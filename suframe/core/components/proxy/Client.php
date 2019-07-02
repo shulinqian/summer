@@ -17,6 +17,17 @@ class Client
     protected $registerServer;
 
     /**
+     * @param Request $request
+     */
+    public function dispatch(Request $request)
+    {
+        parse_str($request->getContent(), $post);
+        var_dump($post);
+        $command = $request->getPost('command');
+        return $command ?: 'error';
+    }
+
+    /**
      * @throws Exception
      */
     public function getRegisterServer()
@@ -52,15 +63,16 @@ class Client
             'api' => 'server/register'
         ]);
         $client->setParameterPost($app->toArray());
-        try {
-            $response = $client->send();
-        } catch (Exception $e) {
+//        try {
+        $response = $client->send();
+        /*} catch (Exception $e) {
             throw new Exception('register server invalid');
-        }
+        }*/
 
         if (!$response->isSuccess()) {
             throw new Exception('register server fail');
         }
+        var_dump($response->getContent());
     }
 
     /**

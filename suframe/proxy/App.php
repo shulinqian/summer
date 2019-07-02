@@ -11,6 +11,7 @@ use suframe\core\components\proxy\Client;
 use suframe\core\traits\Singleton;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Zend\Http\Request;
 
 class App
 {
@@ -29,7 +30,8 @@ class App
     /**
      * @throws \Exception
      */
-    public function run(InputInterface $input, OutputInterface $output) {
+    public function run(InputInterface $input, OutputInterface $output)
+    {
         $this->io = new SymfonyStyle($input, $output);
         $config = Config::getInstance();
         $tcp = new Server();
@@ -56,12 +58,16 @@ class App
 
     /**
      * 服务启动回调
+     * @throws \Exception
      */
-    public function onStart() {
+    public function onStart()
+    {
         $this->io->success('tcp server is running');
         $ip = swoole_get_local_ip();
         $listen = $this->config['server']['listen'] == '0.0.0.0' ? array_shift($ip) : $this->config['server']['listen'];
         $this->io->text('<info>open:</info> ' . $listen . ':' . $this->config['server']['port']);
+        //注册服务
+        Client::getInstance()->register();
     }
 
     /**
@@ -71,16 +77,29 @@ class App
      * @param $reactor_id
      * @param $data
      */
-    public function onReceiveHttp(\Swoole\Server $server, $fd, $reactor_id, $data) {
-        if(!$data || !$fd){
+    public function onReceiveHttp(\Swoole\Server $server, $fd, $reactor_id, $data)
+    {
+        if (!$data || !$fd) {
+            $server->close($fd);
             return;
         }
-        var_dump($data);
-        $request = \Zend\Http\Request::fromString($data);
-        if($request->getUri() == '/favicon.ico'){
+        /** @var Request $request */
+        $request = Request::fromString($data);
+        $uri = $request->getUri();
+        if ($uri == '/favicon.ico') {
+            $server->close($fd);
+            return;
+        } elseif ($uri == '/summer') {
+            $rs = Client::getInstance()->dispatch($request);
+            $server->send($fd, $rs);
+            $server->close($fd);
             return;
         }
+
         EventManager::get()->trigger('http.request', null, ['request' => &$request]);
+        if (!$request) {
+            $server->close($fd);
+        }
         $out = $this->proxy->dispatch($request);
         $out && $server->send($fd, $out);
         $server->close($fd);
@@ -98,12 +117,13 @@ class App
      * @param $reactor_id
      * @param $data
      */
-    public function onReceiveTcp(\Swoole\Server $server, $fd, $reactor_id, $data) {
+    public function onReceiveTcp(\Swoole\Server $server, $fd, $reactor_id, $data)
+    {
         EventManager::get()->trigger('tcp.request', $this, ['data' => &$data]);
         $out = $this->proxy->dispatch($data);
         $server->send($fd, $out);
         $server->close($fd);
-        go(function () use ($data, $out){
+        go(function () use ($data, $out) {
             EventManager::get()->trigger('tcp.response.after', $this, [
                 'request' => $data,
                 'out' => $out,
@@ -114,24 +134,38 @@ class App
     /**
      * 服务结束
      */
-    public function onShutdown() {
+    public function onShutdown()
+    {
         EventManager::get()->trigger('tcp.shutDown', $this);
     }
 
     /**
      * @throws \Exception
      */
-    protected function initProxy(){
-        Client::getInstance()->register();
-        $this->proxy = new Proxy([]);
+    protected function initProxy()
+    {
+        $config = [
+            [
+                'path' => '/news',
+                'host' => '127.0.0.1',
+                'port' => 9502,
+            ],
+            [
+                'path' => '/goods',
+                'host' => '127.0.0.1',
+                'port' => 9602,
+            ],
+        ];
+        $this->proxy = new Proxy($config);
 
-	}
+    }
 
-	/**
-	 * @return Proxy
-	 */
-	public function getProxy(): Proxy {
-		return $this->proxy;
-	}
+    /**
+     * @return Proxy
+     */
+    public function getProxy(): Proxy
+    {
+        return $this->proxy;
+    }
 
 }

@@ -106,21 +106,22 @@ class SyncServers
      */
     public function notify()
     {
-        try {
-            $config = Config::getInstance();
-            $servers = $config->get('servers');
-            //通知更新
-            foreach ($servers as $server) {
-                /** @var Config $item */
-                foreach ($server as $key => $item) {
-                    $cli = new \Swoole\Coroutine\Http\Client($item['ip'], $item['port']);
-                    $cli->post('/summer', array("command" => 'UPDATE_SERVERS'));
-                    $cli->body;
-                    $cli->close();
+        go(function (){
+            try {
+                $config = Config::getInstance();
+                $servers = $config->get('servers');
+                //通知更新
+                foreach ($servers as $server) {
+                    /** @var Config $item */
+                    foreach ($server as $key => $item) {
+                        $cli = new \Swoole\Coroutine\Http\Client($item['ip'], $item['port']);
+                        $cli->post('/summer', array("command" => 'UPDATE_SERVERS', "command2" => 'UPDATE_SERVERS'));
+                        $cli->close();
+                    }
                 }
+            } catch (\Exception $e) {
             }
-        } catch (\Exception $e) {
-        }
+        });
     }
 
 }

@@ -1,0 +1,84 @@
+[2019-07-02 18:12:02 #2727.5]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught Exception: register server invalid in /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php:58
+Stack trace:
+#0 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(67): suframe\core\components\proxy\Client->register()
+#1 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
+#2 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
+#3 /mnt/d/my/ubuntu/summer/suframe/core/commands/tcp/TcpStartCommand.php(40): suframe\proxy\App->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /mnt/d/my/ubuntu/summer/vendor/symfony/console/Command/Command.php(255): suframe\core\commands\tcp\TcpStartCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /mnt/d/my/ubuntu/summer/vendor/symfony/console/Application.php(921): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Conso in /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php on line 58
+[2019-07-02 18:13:28 #2749.5]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught Exception: register server invalid in /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php:58
+Stack trace:
+#0 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(67): suframe\core\components\proxy\Client->register()
+#1 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
+#2 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
+#3 /mnt/d/my/ubuntu/summer/suframe/core/commands/tcp/TcpStartCommand.php(40): suframe\proxy\App->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /mnt/d/my/ubuntu/summer/vendor/symfony/console/Command/Command.php(255): suframe\core\commands\tcp\TcpStartCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /mnt/d/my/ubuntu/summer/vendor/symfony/console/Application.php(921): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Conso in /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php on line 58
+[2019-07-02 18:13:35 #2764.5]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught Exception: register server invalid in /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php:58
+Stack trace:
+#0 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(67): suframe\core\components\proxy\Client->register()
+#1 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
+#2 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
+#3 /mnt/d/my/ubuntu/summer/suframe/core/commands/tcp/TcpStartCommand.php(40): suframe\proxy\App->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /mnt/d/my/ubuntu/summer/vendor/symfony/console/Command/Command.php(255): suframe\core\commands\tcp\TcpStartCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /mnt/d/my/ubuntu/summer/vendor/symfony/console/Application.php(921): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Conso in /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php on line 58
+[2019-07-02 18:14:25 #2779.5]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught Zend\Http\Client\Adapter\Exception\TimeoutException: Read timed out after 2 seconds in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php:639
+Stack trace:
+#0 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php(443): Zend\Http\Client\Adapter\Socket->_checkSocketReadTimeout()
+#1 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(1459): Zend\Http\Client\Adapter\Socket->read()
+#2 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(940): Zend\Http\Client->doRequest(Object(Zend\Uri\Http), 'POST', false, Array, 'path=%2Fproxy&i...')
+#3 /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php(56): Zend\Http\Client->send()
+#4 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(67): suframe\core\components\proxy\Client->register()
+#5 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
+#6 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
+#7 /mnt/d/my/ubuntu/summer/ in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php on line 639
+[2019-07-02 18:16:02 #2823.5]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught Zend\Http\Client\Adapter\Exception\TimeoutException: Read timed out after 2 seconds in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php:639
+Stack trace:
+#0 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php(443): Zend\Http\Client\Adapter\Socket->_checkSocketReadTimeout()
+#1 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(1459): Zend\Http\Client\Adapter\Socket->read()
+#2 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(940): Zend\Http\Client->doRequest(Object(Zend\Uri\Http), 'POST', false, Array, 'path=%2Fproxy&i...')
+#3 /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php(56): Zend\Http\Client->send()
+#4 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(67): suframe\core\components\proxy\Client->register()
+#5 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
+#6 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
+#7 /mnt/d/my/ubuntu/summer/ in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php on line 639
+[2019-07-02 18:17:43 #2838.5]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught Zend\Http\Client\Adapter\Exception\TimeoutException: Read timed out after 2 seconds in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php:639
+Stack trace:
+#0 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php(443): Zend\Http\Client\Adapter\Socket->_checkSocketReadTimeout()
+#1 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(1459): Zend\Http\Client\Adapter\Socket->read()
+#2 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(940): Zend\Http\Client->doRequest(Object(Zend\Uri\Http), 'POST', false, Array, 'path=%2Fproxy&i...')
+#3 /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php(57): Zend\Http\Client->send()
+#4 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(67): suframe\core\components\proxy\Client->register()
+#5 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
+#6 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
+#7 /mnt/d/my/ubuntu/summer/ in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php on line 639
+[2019-07-02 18:18:15 #2853.5]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught Zend\Http\Client\Adapter\Exception\TimeoutException: Read timed out after 2 seconds in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php:639
+Stack trace:
+#0 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php(443): Zend\Http\Client\Adapter\Socket->_checkSocketReadTimeout()
+#1 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(1459): Zend\Http\Client\Adapter\Socket->read()
+#2 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(940): Zend\Http\Client->doRequest(Object(Zend\Uri\Http), 'POST', false, Array, 'path=%2Fproxy&i...')
+#3 /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php(57): Zend\Http\Client->send()
+#4 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(67): suframe\core\components\proxy\Client->register()
+#5 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
+#6 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
+#7 /mnt/d/my/ubuntu/summer/ in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php on line 639
+[2019-07-02 18:18:29 #2875.5]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught Zend\Http\Client\Adapter\Exception\TimeoutException: Read timed out after 2 seconds in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php:639
+Stack trace:
+#0 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php(443): Zend\Http\Client\Adapter\Socket->_checkSocketReadTimeout()
+#1 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(1459): Zend\Http\Client\Adapter\Socket->read()
+#2 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(940): Zend\Http\Client->doRequest(Object(Zend\Uri\Http), 'POST', false, Array, 'path=%2Fproxy&i...')
+#3 /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php(57): Zend\Http\Client->send()
+#4 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(67): suframe\core\components\proxy\Client->register()
+#5 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
+#6 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
+#7 /mnt/d/my/ubuntu/summer/ in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php on line 639
+[2019-07-02 18:20:09 #2964.5]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught Zend\Http\Client\Adapter\Exception\TimeoutException: Read timed out after 2 seconds in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php:639
+Stack trace:
+#0 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php(443): Zend\Http\Client\Adapter\Socket->_checkSocketReadTimeout()
+#1 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(1459): Zend\Http\Client\Adapter\Socket->read()
+#2 /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client.php(940): Zend\Http\Client->doRequest(Object(Zend\Uri\Http), 'POST', false, Array, 'path=%2Fproxy&i...')
+#3 /mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php(57): Zend\Http\Client->send()
+#4 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(67): suframe\core\components\proxy\Client->register()
+#5 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
+#6 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
+#7 /mnt/d/my/ubuntu/summer/ in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php on line 639

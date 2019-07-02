@@ -42,7 +42,7 @@ class Server extends Base
         $server = $config->get('servers');
         $file = SUMMER_APP_ROOT . 'config/servers.php';
         try{
-            $writer->toFile($file, $server);
+//            $writer->toFile($file, $server);
             SyncServers::getInstance()->notify();
             return true;
         } catch (\Exception $e){

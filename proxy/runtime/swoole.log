@@ -1,0 +1,857 @@
+[2019-06-06 15:20:49 #809.8]	INFO	Server is shutdown now
+[2019-06-06 15:33:28 #863.8]	INFO	Server is shutdown now
+[2019-06-06 18:19:57 #1099.8]	INFO	Server is shutdown now
+[2019-06-10 10:57:57 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:57:57 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:57:58 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:57:59 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:57:59 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:57:59 *503.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:57:59 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:00 *503.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:00 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:00 *503.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:00 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:00 *503.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:00 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:01 *503.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:01 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:01 *503.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:01 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:02 *503.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:02 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:03 *503.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:03 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:03 *503.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:03 *504.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:16 *529.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 10:58:17 *529.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:15:00 *719.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:15:00 *720.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:29:31 *882.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:29:31 *883.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:29:34 *882.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:29:35 *883.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:36:25 *929.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:36:26 *929.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:36:27 *930.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:36:27 *929.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:36:27 *929.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:36:28 *930.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:13 *1109.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:13 *1110.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:14 *1109.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:14 *1110.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:15 *1109.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:15 *1110.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:17 *1109.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:17 *1110.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:19 *1109.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:39:19 *1110.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:11 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:11 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:12 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:13 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:14 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:14 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:15 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:16 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:16 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:16 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:17 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:17 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:18 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:18 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:19 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:19 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:20 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:20 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:20 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:21 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:22 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:23 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:24 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:25 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:25 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:26 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:26 *1156.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:46:27 *1157.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:47:23 *1228.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:47:23 *1228.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:48:14 *1275.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 11:48:15 *1276.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:54 *1326.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:54 *1326.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:54 *1327.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:56 *1326.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:56 *1327.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:57 *1326.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:57 *1327.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:57 *1326.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:58 *1327.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:01:58 *1327.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:34:16 $1457.0]	WARNING	swManager_check_exit_status: worker#5[pid=1471] abnormal exit, status=255, signal=0
+[2019-06-10 12:36:20 *1574.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:36:20 *1575.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:36:20 *1574.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:36:20 *1575.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:36:20 *1574.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:36:20 *1575.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:36:23 *1574.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:36:23 *1575.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:36:26 *1574.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:36:26 *1575.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:19 *1646.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:19 *1647.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:54 *1646.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:55 *1647.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:55 *1646.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:55 *1647.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:55 *1646.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:55 *1647.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:56 *1646.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:39:56 *1647.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:41:26 *1715.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:41:26 *1716.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:12 *2009.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:12 *2010.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:13 *2009.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:14 *2010.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:35 *2009.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:35 *2010.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:36 *2009.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:36 *2010.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:37 *2009.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:51:37 *2010.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:53:18 *2081.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:53:18 *2082.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:54:35 *2128.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:54:35 *2129.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:55:24 *2175.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:55:24 *2176.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:58:53 *2269.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 12:58:53 *2270.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 13:02:48 *2328.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 13:02:48 *2329.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 13:04:16 *2375.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 13:04:16 *2376.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 14:08:36 *2375.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 14:08:36 *2376.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 14:11:04 $2585.0]	WARNING	swManager_check_exit_status: worker#10[pid=2604] abnormal exit, status=255, signal=0
+[2019-06-10 14:11:04 $2585.0]	WARNING	swManager_check_exit_status: worker#11[pid=2605] abnormal exit, status=255, signal=0
+[2019-06-10 16:59:50 *3846.5]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=1] does not exists
+[2019-06-10 17:55:56 *4934.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 140 byte failed, because connection[fd=1] is closed
+[2019-06-10 17:55:56 *4924.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 17:55:56 *4935.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=2] does not exists
+[2019-06-10 17:56:21 *5003.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=1] does not exists
+[2019-06-10 17:56:21 *5004.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 141 byte failed, because connection[fd=2] is closed
+[2019-06-10 17:56:21 *4993.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 18:07:02 *5515.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 18:22:39 *5750.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=2] is closed
+[2019-06-10 18:23:55 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=2] is closed
+[2019-06-10 18:23:55 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=4] is closed
+[2019-06-10 18:23:55 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=5] is closed
+[2019-06-10 18:23:55 *5808.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Broken pipe: 13
+[2019-06-10 18:23:55 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=6] is closed
+[2019-06-10 18:23:55 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=7] is closed
+[2019-06-10 18:23:55 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=8] is closed
+[2019-06-10 18:23:55 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=9] is closed
+[2019-06-10 18:23:55 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=10] is closed
+[2019-06-10 18:23:55 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=11] is closed
+[2019-06-10 18:23:55 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=12] is closed
+[2019-06-10 18:23:56 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=13] is closed
+[2019-06-10 18:23:56 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=14] does not exists
+[2019-06-10 18:23:56 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 141 byte failed, because connection[fd=3] is closed
+[2019-06-10 18:23:56 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=16] is closed
+[2019-06-10 18:23:56 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=15] does not exists
+[2019-06-10 18:24:00 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=22] does not exists
+[2019-06-10 18:24:01 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=26] is closed
+[2019-06-10 18:24:01 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=27] is closed
+[2019-06-10 18:24:01 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=28] is closed
+[2019-06-10 18:24:01 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=29] does not exists
+[2019-06-10 18:24:01 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=30] is closed
+[2019-06-10 18:24:01 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=31] does not exists
+[2019-06-10 18:24:01 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=32] is closed
+[2019-06-10 18:24:01 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=33] does not exists
+[2019-06-10 18:24:01 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=34] is closed
+[2019-06-10 18:24:01 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=35] does not exists
+[2019-06-10 18:24:01 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 142 byte failed, because connection[fd=24] is closed
+[2019-06-10 18:24:01 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=36] does not exists
+[2019-06-10 18:24:01 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=37] is closed
+[2019-06-10 18:24:02 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=42] is closed
+[2019-06-10 18:24:02 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=43] does not exists
+[2019-06-10 18:24:02 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=44] is closed
+[2019-06-10 18:24:02 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=45] is closed
+[2019-06-10 18:24:02 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=46] does not exists
+[2019-06-10 18:24:02 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=47] is closed
+[2019-06-10 18:24:02 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 142 byte failed, because connection[fd=40] is closed
+[2019-06-10 18:24:02 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=49] is closed
+[2019-06-10 18:24:03 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=48] does not exists
+[2019-06-10 18:24:03 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=51] is closed
+[2019-06-10 18:24:05 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=52] does not exists
+[2019-06-10 18:24:05 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=56] does not exists
+[2019-06-10 18:24:05 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=58] is closed
+[2019-06-10 18:24:06 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=60] is closed
+[2019-06-10 18:24:06 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=62] is closed
+[2019-06-10 18:24:06 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 153 byte failed, because connection[fd=54] is closed
+[2019-06-10 18:24:07 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=64] does not exists
+[2019-06-10 18:24:07 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=67] is closed
+[2019-06-10 18:24:08 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=69] is closed
+[2019-06-10 18:24:08 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=71] is closed
+[2019-06-10 18:24:08 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=72] is closed
+[2019-06-10 18:24:08 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=73] is closed
+[2019-06-10 18:24:08 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=74] is closed
+[2019-06-10 18:24:08 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 142 byte failed, because connection[fd=68] is closed
+[2019-06-10 18:24:10 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=76] is closed
+[2019-06-10 18:24:10 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=77] does not exists
+[2019-06-10 18:24:11 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=79] is closed
+[2019-06-10 18:24:11 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=80] is closed
+[2019-06-10 18:24:11 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=82] does not exists
+[2019-06-10 18:24:11 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=85] is closed
+[2019-06-10 18:24:11 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=86] does not exists
+[2019-06-10 18:24:11 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=87] is closed
+[2019-06-10 18:24:11 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=88] does not exists
+[2019-06-10 18:24:11 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=89] is closed
+[2019-06-10 18:24:12 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=90] does not exists
+[2019-06-10 18:24:12 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=91] is closed
+[2019-06-10 18:24:12 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=92] does not exists
+[2019-06-10 18:24:12 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=93] is closed
+[2019-06-10 18:24:12 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=94] does not exists
+[2019-06-10 18:24:12 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=95] is closed
+[2019-06-10 18:24:12 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=96] does not exists
+[2019-06-10 18:24:13 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=102] does not exists
+[2019-06-10 18:24:13 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=104] does not exists
+[2019-06-10 18:24:13 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=106] is closed
+[2019-06-10 18:24:13 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=100] is closed
+[2019-06-10 18:24:15 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=107] does not exists
+[2019-06-10 18:24:15 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=111] does not exists
+[2019-06-10 18:24:15 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=113] does not exists
+[2019-06-10 18:24:15 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=115] is closed
+[2019-06-10 18:24:15 *5808.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=116] is closed
+[2019-06-10 18:24:15 *5819.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=117] is closed
+[2019-06-10 18:24:16 *5818.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=109] is closed
+[2019-06-10 18:27:27 *5865.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=9] does not exists
+[2019-06-10 18:27:27 *5866.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=14] is closed
+[2019-06-10 18:27:27 *5866.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=15] does not exists
+[2019-06-10 18:27:27 *5866.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=16] is closed
+[2019-06-10 18:27:27 *5866.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=17] does not exists
+[2019-06-10 18:27:27 *5866.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=18] is closed
+[2019-06-10 18:27:27 *5866.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=19] does not exists
+[2019-06-10 18:27:28 *5866.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=20] is closed
+[2019-06-10 18:27:28 *5866.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=21] is closed
+[2019-06-10 18:27:28 *5865.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 153 byte failed, because connection[fd=13] is closed
+[2019-06-10 18:32:02 *5890.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=1] is closed
+[2019-06-10 18:32:02 *5891.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=2] is closed
+[2019-06-10 18:32:02 *5890.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=3] is closed
+[2019-06-10 18:32:02 *5890.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=4] is closed
+[2019-06-10 18:32:07 *5891.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=5] is closed
+[2019-06-10 18:32:07 *5890.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=6] is closed
+[2019-06-10 18:32:37 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=1] is closed
+[2019-06-10 18:32:37 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=2] is closed
+[2019-06-10 18:32:37 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=3] is closed
+[2019-06-10 18:32:37 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=4] is closed
+[2019-06-10 18:32:39 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=5] is closed
+[2019-06-10 18:32:39 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=6] is closed
+[2019-06-10 18:32:40 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=7] is closed
+[2019-06-10 18:32:40 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=8] is closed
+[2019-06-10 18:32:40 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=9] is closed
+[2019-06-10 18:32:40 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=10] is closed
+[2019-06-10 18:32:41 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=11] is closed
+[2019-06-10 18:32:41 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=12] is closed
+[2019-06-10 18:32:41 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=13] is closed
+[2019-06-10 18:32:41 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=14] is closed
+[2019-06-10 18:32:42 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=15] is closed
+[2019-06-10 18:32:42 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=16] is closed
+[2019-06-10 18:32:42 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=17] is closed
+[2019-06-10 18:32:43 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=18] is closed
+[2019-06-10 18:32:43 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=19] is closed
+[2019-06-10 18:32:43 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=20] is closed
+[2019-06-10 18:32:44 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=21] is closed
+[2019-06-10 18:32:45 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=22] is closed
+[2019-06-10 18:32:45 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=23] is closed
+[2019-06-10 18:32:45 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=24] is closed
+[2019-06-10 18:32:46 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=25] is closed
+[2019-06-10 18:32:48 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=26] is closed
+[2019-06-10 18:32:48 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=27] is closed
+[2019-06-10 18:32:48 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=28] is closed
+[2019-06-10 18:32:50 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=29] is closed
+[2019-06-10 18:32:52 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=30] is closed
+[2019-06-10 18:32:52 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=31] is closed
+[2019-06-10 18:32:52 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=32] is closed
+[2019-06-10 18:32:57 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=33] is closed
+[2019-06-10 18:33:27 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=35] is closed
+[2019-06-10 18:33:36 *5963.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=36] is closed
+[2019-06-10 18:33:36 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=37] is closed
+[2019-06-10 18:33:37 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=38] is closed
+[2019-06-10 18:34:37 *5962.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=39] is closed
+[2019-06-10 18:35:10 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=31] is closed
+[2019-06-10 18:35:10 *6032.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=32] is closed
+[2019-06-10 18:35:10 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=33] is closed
+[2019-06-10 18:35:10 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=34] is closed
+[2019-06-10 18:35:12 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=35] is closed
+[2019-06-10 18:35:12 *6032.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=36] is closed
+[2019-06-10 18:35:12 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=37] is closed
+[2019-06-10 18:35:13 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=38] is closed
+[2019-06-10 18:35:13 *6032.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=39] is closed
+[2019-06-10 18:35:13 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=40] is closed
+[2019-06-10 18:35:13 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=41] is closed
+[2019-06-10 18:35:13 *6032.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=42] is closed
+[2019-06-10 18:35:13 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=43] is closed
+[2019-06-10 18:35:13 *6032.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=44] is closed
+[2019-06-10 18:35:13 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=45] is closed
+[2019-06-10 18:35:14 *6032.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=46] is closed
+[2019-06-10 18:35:14 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=47] is closed
+[2019-06-10 18:35:14 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=48] is closed
+[2019-06-10 18:35:15 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=49] is closed
+[2019-06-10 18:35:20 *6032.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=50] is closed
+[2019-06-10 18:35:20 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=51] is closed
+[2019-06-10 18:35:20 *6031.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=52] is closed
+[2019-06-10 18:35:50 *6078.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=31] is closed
+[2019-06-10 18:35:50 *6079.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=32] is closed
+[2019-06-10 18:35:50 *6078.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=33] is closed
+[2019-06-10 18:35:50 *6078.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=34] is closed
+[2019-06-10 18:35:55 *6079.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=35] is closed
+[2019-06-10 18:35:55 *6078.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=36] is closed
+[2019-06-10 18:36:04 *6078.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=37] is closed
+[2019-06-10 18:36:04 *6079.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=38] is closed
+[2019-06-10 18:36:04 *6078.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=39] is closed
+[2019-06-10 18:36:34 *6078.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=41] is closed
+[2019-06-10 18:37:03 *6125.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=1] is closed
+[2019-06-10 18:37:07 *6125.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=2] is closed
+[2019-06-10 18:37:07 *6126.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=3] is closed
+[2019-06-10 18:37:07 *6125.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=4] is closed
+[2019-06-10 18:37:08 *6125.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=5] is closed
+[2019-06-10 18:37:08 *6126.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=6] is closed
+[2019-06-10 18:37:08 *6125.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=7] is closed
+[2019-06-10 18:37:09 *6125.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=8] is closed
+[2019-06-10 18:37:09 *6126.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=9] is closed
+[2019-06-10 18:37:09 *6125.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=10] is closed
+[2019-06-10 18:37:09 *6125.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=11] is closed
+[2019-06-10 18:38:03 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=77] is closed
+[2019-06-10 18:38:03 *6173.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=78] is closed
+[2019-06-10 18:38:03 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=79] is closed
+[2019-06-10 18:38:03 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=80] is closed
+[2019-06-10 18:38:07 *6173.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=81] is closed
+[2019-06-10 18:38:07 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=82] is closed
+[2019-06-10 18:38:09 *6173.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=83] is closed
+[2019-06-10 18:38:09 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=84] is closed
+[2019-06-10 18:38:10 *6173.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=85] is closed
+[2019-06-10 18:38:10 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=86] is closed
+[2019-06-10 18:38:11 *6173.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=87] is closed
+[2019-06-10 18:38:11 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=88] is closed
+[2019-06-10 18:38:11 *6173.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=89] is closed
+[2019-06-10 18:38:11 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=90] is closed
+[2019-06-10 18:38:12 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=91] is closed
+[2019-06-10 18:38:17 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=92] is closed
+[2019-06-10 18:38:47 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=94] is closed
+[2019-06-10 18:39:47 *6172.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=96] is closed
+[2019-06-10 18:41:00 *6242.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=22] does not exists
+[2019-06-10 18:41:02 *6242.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=30] does not exists
+[2019-06-10 18:42:54 *6289.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=42] does not exists
+[2019-06-10 18:42:54 *6289.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=46] does not exists
+[2019-06-10 18:42:54 *6289.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=50] does not exists
+[2019-06-10 18:42:55 *6289.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=54] does not exists
+[2019-06-10 18:42:56 *6289.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=58] does not exists
+[2019-06-10 18:42:57 *6289.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=64] does not exists
+[2019-06-10 18:42:57 *6289.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=68] does not exists
+[2019-06-10 18:44:09 $6316.0]	WARNING	swManager_check_exit_status: worker#10[pid=6335] abnormal exit, status=255, signal=0
+[2019-06-10 18:47:25 *6477.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=1] does not exists
+[2019-06-10 18:47:25 *6478.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=2] does not exists
+[2019-06-10 18:47:27 *6478.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=6] is closed
+[2019-06-10 18:47:29 *6478.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=9] is closed
+[2019-06-10 18:47:36 *6478.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=12] is closed
+[2019-06-10 18:47:37 *6478.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=15] is closed
+[2019-06-10 18:47:38 *6478.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=18] is closed
+[2019-06-10 18:48:23 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=1] does not exists
+[2019-06-10 18:48:23 *6525.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=2] does not exists
+[2019-06-10 18:48:30 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=5] is closed
+[2019-06-10 18:48:30 *6525.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=6] does not exists
+[2019-06-10 18:48:30 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=7] is closed
+[2019-06-10 18:48:30 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=8] is closed
+[2019-06-10 18:48:34 *6525.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=9] is closed
+[2019-06-10 18:48:34 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=10] is closed
+[2019-06-10 18:48:34 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=11] is closed
+[2019-06-10 18:48:34 *6525.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=12] is closed
+[2019-06-10 18:48:34 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=13] is closed
+[2019-06-10 18:48:35 *6525.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=14] is closed
+[2019-06-10 18:48:35 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=15] is closed
+[2019-06-10 18:48:36 *6525.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=16] is closed
+[2019-06-10 18:48:36 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=17] is closed
+[2019-06-10 18:48:36 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=18] is closed
+[2019-06-10 18:48:37 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=19] is closed
+[2019-06-10 18:48:37 *6525.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=20] is closed
+[2019-06-10 18:48:37 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=21] is closed
+[2019-06-10 18:48:38 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=22] is closed
+[2019-06-10 18:48:38 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=23] is closed
+[2019-06-10 18:48:39 *6525.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=24] is closed
+[2019-06-10 18:48:39 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=25] is closed
+[2019-06-10 18:48:39 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=26] is closed
+[2019-06-10 18:48:44 *6524.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 105 byte failed, because connection[fd=27] is closed
+[2019-06-10 18:54:19 *6757.11]	NOTICE	swFactoryProcess_finish (ERRNO 1005): connection[fd=32] does not exists
+[2019-06-10 18:56:51 *6815.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6820.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6821.6]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6826.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 $6806.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6815.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6820.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6821.6]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6826.11]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 $6806.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6817.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6817.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6816.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6823.8]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6822.7]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 #6802.8]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6818.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6819.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6824.9]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-10 18:56:51 *6825.10]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 12:58:44 #234.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:58:48 #234.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8532] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8543] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8539] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8538] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8545] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8544] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8536] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8551] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8540] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8542] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8535] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8550] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8537] is closed
+[2019-06-11 12:58:51 *251.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8553] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8548] is closed
+[2019-06-11 12:58:51 *256.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8546] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8554] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8552] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8555] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8557] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8558] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8560] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8562] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8547] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8570] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8556] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8574] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8563] is closed
+[2019-06-11 12:58:51 *251.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8541] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8559] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8566] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8565] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8571] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8564] is closed
+[2019-06-11 12:58:51 *256.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8534] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8549] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8568] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8578] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8569] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8572] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8573] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8589] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8575] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8576] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8561] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8579] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8583] is closed
+[2019-06-11 12:58:51 *251.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8577] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8587] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8581] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8592] is closed
+[2019-06-11 12:58:51 *256.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8567] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8584] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8600] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8585] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8590] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8580] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8593] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8595] is closed
+[2019-06-11 12:58:51 *251.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8591] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8588] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8601] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8604] is closed
+[2019-06-11 12:58:51 *256.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8582] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8598] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8586] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8602] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8599] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8594] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8612] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8605] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8597] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8610] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8630] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8607] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8613] is closed
+[2019-06-11 12:58:51 *251.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8603] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8611] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8620] is closed
+[2019-06-11 12:58:51 *256.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8608] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8606] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8621] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8614] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8618] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8619] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8628] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8615] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8631] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8624] is closed
+[2019-06-11 12:58:51 *256.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8596] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8639] is closed
+[2019-06-11 12:58:51 *251.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8616] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8625] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8622] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8609] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8635] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8648] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8636] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8629] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8642] is closed
+[2019-06-11 12:58:51 *249.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8650] is closed
+[2019-06-11 12:58:51 *256.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8617] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8632] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8656] is closed
+[2019-06-11 12:58:51 *251.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8623] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8640] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8626] is closed
+[2019-06-11 12:58:51 *252.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8637] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8643] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8633] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8645] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8638] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8647] is closed
+[2019-06-11 12:58:51 *247.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8634] is closed
+[2019-06-11 12:58:51 *256.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8627] is closed
+[2019-06-11 12:58:51 *255.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8652] is closed
+[2019-06-11 12:58:51 *250.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8654] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8644] is closed
+[2019-06-11 12:58:51 *258.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8651] is closed
+[2019-06-11 12:58:51 *253.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8659] is closed
+[2019-06-11 12:58:51 *251.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8641] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8649] is closed
+[2019-06-11 12:58:51 *257.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8655] is closed
+[2019-06-11 12:58:51 *256.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8646] is closed
+[2019-06-11 12:58:51 *254.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8653] is closed
+[2019-06-11 12:58:51 *248.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8657] is closed
+[2019-06-11 12:58:51 *251.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=8658] is closed
+[2019-06-11 12:59:21 #234.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:59:21 #234.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:59:22 #234.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:59:23 #234.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:59:55 #341.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:59:55 #341.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:59:56 #341.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:59:57 #341.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:59:58 #341.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 12:59:59 #341.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:00:00 #341.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:00:01 #341.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:01:31 #341.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:02:29 #372.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:02:32 #372.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:05:25 #403.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:19:52 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:19:53 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:19:54 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:19:55 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:19:56 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:19:57 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:19:58 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:19:59 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:00 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:01 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:02 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:03 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:04 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:05 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:06 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:07 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:08 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:09 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:10 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:20:15 #429.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:21:06 #480.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:21:46 #480.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:22:10 #480.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:22:11 *501.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14523] is closed
+[2019-06-11 13:22:11 *495.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14529] is closed
+[2019-06-11 13:22:11 *498.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14520] is closed
+[2019-06-11 13:22:11 *500.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14522] is closed
+[2019-06-11 13:22:11 *502.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14524] is closed
+[2019-06-11 13:22:11 *503.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14525] is closed
+[2019-06-11 13:22:11 *496.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14530] is closed
+[2019-06-11 13:22:11 *499.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14521] is closed
+[2019-06-11 13:22:11 *504.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14526] is closed
+[2019-06-11 13:22:11 *501.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14535] is closed
+[2019-06-11 13:22:11 *493.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14527] is closed
+[2019-06-11 13:22:11 *494.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14528] is closed
+[2019-06-11 13:22:11 *497.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14531] is closed
+[2019-06-11 13:22:11 *498.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14532] is closed
+[2019-06-11 13:22:11 *502.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14536] is closed
+[2019-06-11 13:22:11 *499.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=14533] is closed
+[2019-06-11 13:22:16 #480.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:22:17 *498.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=15631] is closed
+[2019-06-11 13:22:17 *499.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=15632] is closed
+[2019-06-11 13:22:31 #480.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:22:42 #480.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:22:43 *498.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21445] is closed
+[2019-06-11 13:22:43 *493.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21452] is closed
+[2019-06-11 13:22:43 *498.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21457] is closed
+[2019-06-11 13:22:43 *502.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21449] is closed
+[2019-06-11 13:22:43 *500.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21447] is closed
+[2019-06-11 13:22:43 *494.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21453] is closed
+[2019-06-11 13:22:43 *501.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21448] is closed
+[2019-06-11 13:22:43 *503.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21450] is closed
+[2019-06-11 13:22:43 *495.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21454] is closed
+[2019-06-11 13:22:43 *504.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21451] is closed
+[2019-06-11 13:22:43 *496.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21455] is closed
+[2019-06-11 13:22:43 *499.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21446] is closed
+[2019-06-11 13:22:43 *497.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21456] is closed
+[2019-06-11 13:22:43 *500.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21459] is closed
+[2019-06-11 13:22:43 *499.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=21458] is closed
+[2019-06-11 13:30:28 #523.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:30:40 #523.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:30:42 *539.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=5690] is closed
+[2019-06-11 13:31:03 #523.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:31:09 #523.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:31:15 #523.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:31:16 *544.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13973] is closed
+[2019-06-11 13:31:16 *545.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13974] is closed
+[2019-06-11 13:31:16 *539.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13978] is closed
+[2019-06-11 13:31:16 *536.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13975] is closed
+[2019-06-11 13:31:16 *543.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13972] is closed
+[2019-06-11 13:31:16 *537.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13976] is closed
+[2019-06-11 13:31:16 *541.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13980] is closed
+[2019-06-11 13:31:16 *542.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13981] is closed
+[2019-06-11 13:31:16 *538.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13977] is closed
+[2019-06-11 13:31:16 *540.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13979] is closed
+[2019-06-11 13:31:16 *544.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13983] is closed
+[2019-06-11 13:31:16 *543.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=13982] is closed
+[2019-06-11 13:31:35 #578.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 13:33:39 #613.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 14:04:10 #613.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 14:04:11 *644.18]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2369] is closed
+[2019-06-11 14:04:11 *630.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2375] is closed
+[2019-06-11 14:04:11 *645.19]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2370] is closed
+[2019-06-11 14:04:11 *626.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2371] is closed
+[2019-06-11 14:04:11 *628.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2373] is closed
+[2019-06-11 14:04:11 *627.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2372] is closed
+[2019-06-11 14:04:11 *631.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2376] is closed
+[2019-06-11 14:04:11 *633.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2378] is closed
+[2019-06-11 14:04:11 *643.17]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2368] is closed
+[2019-06-11 14:04:11 *634.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2379] is closed
+[2019-06-11 14:04:11 *629.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2374] is closed
+[2019-06-11 14:04:11 *632.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2377] is closed
+[2019-06-11 14:04:11 *637.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2382] is closed
+[2019-06-11 14:04:11 *635.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2380] is closed
+[2019-06-11 14:04:11 *636.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2381] is closed
+[2019-06-11 14:04:11 *644.18]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2389] is closed
+[2019-06-11 14:04:11 *638.12]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2383] is closed
+[2019-06-11 14:04:11 *640.14]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2385] is closed
+[2019-06-11 14:04:11 *642.16]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2387] is closed
+[2019-06-11 14:04:11 *641.15]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2386] is closed
+[2019-06-11 14:04:11 *639.13]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2384] is closed
+[2019-06-11 14:04:11 *630.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2395] is closed
+[2019-06-11 14:04:11 *626.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2391] is closed
+[2019-06-11 14:04:11 *628.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2393] is closed
+[2019-06-11 14:04:11 *627.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2392] is closed
+[2019-06-11 14:04:11 *631.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2396] is closed
+[2019-06-11 14:04:11 *643.17]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2388] is closed
+[2019-06-11 14:04:11 *629.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2394] is closed
+[2019-06-11 14:04:11 *632.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2397] is closed
+[2019-06-11 14:04:11 *644.18]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=2398] is closed
+[2019-06-11 14:07:01 #613.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 14:07:01 #613.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 14:07:02 #613.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 14:07:03 #613.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 14:08:06 #613.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 14:08:07 *643.17]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4841] is closed
+[2019-06-11 14:08:07 *627.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4845] is closed
+[2019-06-11 14:08:07 *633.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4851] is closed
+[2019-06-11 14:08:07 *629.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4847] is closed
+[2019-06-11 14:08:07 *644.18]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4842] is closed
+[2019-06-11 14:08:07 *628.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4846] is closed
+[2019-06-11 14:08:07 *645.19]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4843] is closed
+[2019-06-11 14:08:07 *631.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4849] is closed
+[2019-06-11 14:08:07 *626.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4844] is closed
+[2019-06-11 14:08:07 *632.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4850] is closed
+[2019-06-11 14:08:07 *635.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4853] is closed
+[2019-06-11 14:08:07 *630.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4848] is closed
+[2019-06-11 14:08:07 *636.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4854] is closed
+[2019-06-11 14:08:07 *634.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4852] is closed
+[2019-06-11 14:08:07 *638.12]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4856] is closed
+[2019-06-11 14:08:07 *626.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4865] is closed
+[2019-06-11 14:08:07 *630.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 93 byte failed, because connection[fd=4879] is closed
+[2019-06-11 14:08:44 #613.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 14:08:51 #652.8]	WARNING	swServer_master_onAccept(:112): accept() failed, Error: Too many open files[24]
+[2019-06-11 14:08:51 *683.18]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=969] is closed
+[2019-06-11 14:08:51 *665.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=971] is closed
+[2019-06-11 14:08:51 *669.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=975] is closed
+[2019-06-11 14:08:51 *672.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=978] is closed
+[2019-06-11 14:08:51 *676.11]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=982] is closed
+[2019-06-11 14:08:51 *684.19]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=970] is closed
+[2019-06-11 14:08:51 *682.17]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=968] is closed
+[2019-06-11 14:08:51 *670.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=976] is closed
+[2019-06-11 14:08:51 *671.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=977] is closed
+[2019-06-11 14:08:51 *675.10]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=981] is closed
+[2019-06-11 14:08:51 *667.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=973] is closed
+[2019-06-11 14:08:51 *678.13]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=984] is closed
+[2019-06-11 14:08:51 *674.9]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=980] is closed
+[2019-06-11 14:08:51 *666.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=972] is closed
+[2019-06-11 14:08:51 *671.6]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=997] is closed
+[2019-06-11 14:08:51 *668.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=974] is closed
+[2019-06-11 14:08:51 *677.12]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=983] is closed
+[2019-06-11 14:08:51 *680.15]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=986] is closed
+[2019-06-11 14:08:51 *679.14]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=985] is closed
+[2019-06-11 14:08:51 *681.16]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=987] is closed
+[2019-06-11 14:08:51 *683.18]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=989] is closed
+[2019-06-11 14:08:51 *669.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=995] is closed
+[2019-06-11 14:08:51 *667.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=993] is closed
+[2019-06-11 14:08:51 *665.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=991] is closed
+[2019-06-11 14:08:51 *672.7]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=998] is closed
+[2019-06-11 14:08:51 *684.19]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=990] is closed
+[2019-06-11 14:08:51 *673.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=979] is closed
+[2019-06-11 14:08:51 *682.17]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=988] is closed
+[2019-06-11 14:08:51 *670.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=996] is closed
+[2019-06-11 14:08:51 *668.3]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=994] is closed
+[2019-06-11 14:08:51 *666.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=992] is closed
+[2019-06-11 14:08:51 *673.8]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 169 byte failed, because connection[fd=999] is closed
+[2019-06-11 14:14:48 *670.5]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 171 byte failed, because connection[fd=5746] is closed
+[2019-06-11 14:47:50 $710.0]	WARNING	swManager_check_exit_status: worker#4[pid=720] abnormal exit, status=255, signal=0
+[2019-06-11 15:16:51 #888.5]	INFO	Server is shutdown now
+[2019-06-11 15:25:37 #924.5]	INFO	Server is shutdown now
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3536] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3523] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3532] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3540] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3528] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3537] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3544] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3533] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3545] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3548] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3538] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3541] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3552] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3542] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3549] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3557] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3546] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3470] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3562] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3553] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3550] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3475] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3567] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3554] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3558] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3572] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3480] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3559] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3563] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3577] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3485] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3564] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3582] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3569] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3490] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3568] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3587] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3574] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3592] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3495] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3579] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3573] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3597] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3500] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3584] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3578] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3602] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3589] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3607] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3505] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3583] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3594] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3612] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3510] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3599] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3588] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3617] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3515] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3593] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3604] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3598] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3520] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3622] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3603] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3609] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3525] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3627] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3614] is closed
+[2019-06-11 15:26:15 *977.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3632] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3530] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3608] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3619] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3535] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3613] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3624] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3539] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3629] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3618] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3543] is closed
+[2019-06-11 15:26:15 *979.2]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3634] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3623] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3628] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3547] is closed
+[2019-06-11 15:26:15 *978.1]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3633] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3551] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3556] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3561] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3566] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3571] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3576] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3581] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3586] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3591] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3596] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3601] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3606] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3611] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3616] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3621] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3626] is closed
+[2019-06-11 15:26:15 *981.4]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 154 byte failed, because connection[fd=3631] is closed
+[2019-06-11 16:36:09 #1037.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1048.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1049.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1047.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1051.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1051.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1047.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 $1041.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 $1041.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 #1037.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1048.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1049.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1050.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-11 16:36:09 *1050.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-14 16:21:48 $158.0]	WARNING	swManager_check_exit_status: worker#4[pid=168] abnormal exit, status=255, signal=0
+[2019-06-14 17:23:14 $398.0]	WARNING	swManager_check_exit_status: worker#4[pid=408] abnormal exit, status=255, signal=0
+[2019-06-14 17:23:34 $414.0]	WARNING	swManager_check_exit_status: worker#4[pid=424] abnormal exit, status=255, signal=0
+[2019-06-15 14:45:18 #467.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *481.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *477.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *479.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *480.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *478.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 $471.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 #467.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *481.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *477.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *479.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *480.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 *478.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-06-15 14:45:18 $471.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
