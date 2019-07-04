@@ -3,7 +3,7 @@
  * User: qian
  * Date: 2019/6/5 11:42
  */
-namespace suframe\core\components\net\tcp;
+namespace suframe\core\components\net\http;
 
 
 use Swoole\Http\Request;

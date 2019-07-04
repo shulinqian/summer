@@ -4,24 +4,32 @@
  * Date: 2019/7/1 16:36
  */
 
-namespace suframe\register\components;
+namespace suframe\core\components\register;
 
 use suframe\core\components\Config;
 use suframe\core\traits\Singleton;
 use Swoole\Client;
 use Swoole\Timer;
-use Zend\Config\Writer\PhpArray;
 
 /**
  * 服务定时同步
  * Class SyncServers
  * @package suframe\register\components
  */
-class SyncServers
+class Server
 {
     use Singleton;
 
     protected $timer = [];
+
+
+    /**
+     * @return Config
+     */
+    public function getConfig(): Config
+    {
+        return \suframe\core\components\register\Client::getInstance()->reloadServer();
+    }
 
     /**
      * 创建定时器
@@ -32,9 +40,9 @@ class SyncServers
         if ($this->timer) {
             return false;
         }
-        $timerMs = Config::getInstance()->get('serverConfig.timerMs', 1000 * 60);
+        $timerMs = $this->getConfig()->get('serverConfig.timerMs', 1000 * 60);
         $timer = Timer::tick($timerMs, function () {
-            SyncServers::getInstance()->check();
+            static::getInstance()->check();
         });
         $this->timer = [
             'created_time' => date('Y-m-d H:i:s'),
@@ -72,29 +80,31 @@ class SyncServers
      */
     public function check()
     {
-        $config = Config::getInstance();
-        $servers = $config->get('servers');
+        $servers = $this->getConfig()->get('servers');
         $hasChange = false;
+        echo "check servers \n";
+        var_dump($servers->toArray());
         //检测
         foreach ($servers as $server) {
             /** @var Config $item */
             foreach ($server as $key => $item) {
                 $client = new Client(SWOOLE_SOCK_TCP);
-                if (!$client->connect($item['ip'], $item['port'], -1)) {
+                if (!@$client->connect($item['ip'], $item['port'], -1)) {
                     $hasChange = true;
                     //剔除
                     echo "{$item['ip']}:{$item['port']}: has error\n";
                     unset($server[$key]);
                     continue;
                 }
+                echo "ok\n";
                 $client->close();
             }
         }
         if ($hasChange) {
+            $config = Config::getInstance();
             $servers = $config->get('servers');
-            $file = SUMMER_APP_ROOT . 'config/servers.php';
-            $writer = new PhpArray();
-            $writer->toFile($file, $servers->toArray());
+            \suframe\core\components\register\Client::getInstance()->updateLocalFile($servers->toArray());
+            echo "notify \n";
             $this->notify();
         }
         return true;
@@ -106,22 +116,21 @@ class SyncServers
      */
     public function notify()
     {
-        go(function (){
-            try {
-                $config = Config::getInstance();
-                $servers = $config->get('servers');
-                //通知更新
-                foreach ($servers as $server) {
-                    /** @var Config $item */
-                    foreach ($server as $key => $item) {
-                        $cli = new \Swoole\Coroutine\Http\Client($item['ip'], $item['port']);
-                        $cli->post('/summer', array("command" => 'UPDATE_SERVERS', "command2" => 'UPDATE_SERVERS'));
-                        $cli->close();
-                    }
+//        try {
+            $servers = $this->getConfig()->get('servers');
+            //通知更新
+            foreach ($servers as $server) {
+                /** @var Config $item */
+                foreach ($server as $key => $item) {
+                    $cli = new \Swoole\Coroutine\Http\Client($item['ip'], $item['port']);
+                    $cli->post('/summer/client/notify', array("command" => \suframe\core\components\register\Client::COMMAND_UPDATE_SERVERS));
+                    $rs = $cli->body;
+                    var_dump($rs);
+                    $cli->close();
                 }
-            } catch (\Exception $e) {
             }
-        });
+        /*} catch (\Exception $e) {
+        }*/
     }
 
 }

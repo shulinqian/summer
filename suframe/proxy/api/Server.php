@@ -1,7 +1,7 @@
 <?php
 
 
-namespace suframe\register\api;
+namespace suframe\proxy\api;
 
 
 use suframe\core\components\Config;

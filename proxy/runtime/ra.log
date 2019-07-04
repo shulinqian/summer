@@ -82,3 +82,45 @@ Stack trace:
 #5 [internal function]: suframe\proxy\App->onStart(Object(Swoole\Server))
 #6 /mnt/d/my/ubuntu/summer/suframe/proxy/App.php(53): Swoole\Server->start()
 #7 /mnt/d/my/ubuntu/summer/ in /mnt/d/my/ubuntu/summer/vendor/zendframework/zend-http/src/Client/Adapter/Socket.php on line 639
+[2019-07-02 18:52:10 *3232.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 $3226.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 *3233.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 *3234.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 #3222.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 *3232.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 #3222.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 $3226.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 *3236.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 *3235.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 *3233.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-02 18:52:10 *3234.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-04 11:16:37 #553.5]	ERROR	(PHP Fatal Error: 10001):
+Swoole\Coroutine\Http\Client::post: API must be called in the coroutine
+Stack trace:
+#0  Swoole\Coroutine\Http\Client->post() called at [/mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php:45]
+#1  suframe\core\components\proxy\Client->register() called at [/mnt/d/my/ubuntu/summer/suframe/proxy/App.php:72]
+#2  suframe\proxy\App->onStart()
+#3  Swoole\Server->start() called at [/mnt/d/my/ubuntu/summer/suframe/proxy/App.php:57]
+#4  suframe\proxy\App->run() called at [/mnt/d/my/ubuntu/summer/suframe/core/commands/tcp/TcpStartCommand.php:40]
+#5  suframe\core\commands\tcp\TcpStartCommand->execute() called at [/mnt/d/my/ubuntu/summer/vendor/symfony/console/Command/Command.php:255]
+#6  Symfony\Component\Console\Command\Command->run() called at [/mnt/d/my/ubuntu/summer/vendor/symfony/console/Application.php:921]
+#7  Symfony\Component\Console\Application->doRunCommand() called at [/mnt/d/my/ubuntu/summer/vendor/symfony/console/Application.php:273]
+#8  Symfony\Component\Console\Application->doRun() called at [/mnt/d/my/ubuntu/summer/vendor/symfony/console/Application.php:149]
+#9  Symfony\Component\Console\Application->run() called at [/mnt/d/my/ubuntu/summer/suframe/core/Core.php:54]
+#10 suframe\core\Core->run() called at [/mnt/d/my/ubuntu/summer/proxy/summer.php:33]
+[2019-07-04 11:17:10 #583.5]	ERROR	(PHP Fatal Error: 10001):
+Swoole\Coroutine\Http\Client::post: API must be called in the coroutine
+Stack trace:
+#0  Swoole\Coroutine\Http\Client->post() called at [/mnt/d/my/ubuntu/summer/suframe/core/components/proxy/Client.php:45]
+#1  suframe\core\components\proxy\Client->register() called at [/mnt/d/my/ubuntu/summer/suframe/proxy/App.php:72]
+#2  suframe\proxy\App->onStart()
+#3  Swoole\Server->start() called at [/mnt/d/my/ubuntu/summer/suframe/proxy/App.php:57]
+#4  suframe\proxy\App->run() called at [/mnt/d/my/ubuntu/summer/suframe/core/commands/tcp/TcpStartCommand.php:40]
+#5  suframe\core\commands\tcp\TcpStartCommand->execute() called at [/mnt/d/my/ubuntu/summer/vendor/symfony/console/Command/Command.php:255]
+#6  Symfony\Component\Console\Command\Command->run() called at [/mnt/d/my/ubuntu/summer/vendor/symfony/console/Application.php:921]
+#7  Symfony\Component\Console\Application->doRunCommand() called at [/mnt/d/my/ubuntu/summer/vendor/symfony/console/Application.php:273]
+#8  Symfony\Component\Console\Application->doRun() called at [/mnt/d/my/ubuntu/summer/vendor/symfony/console/Application.php:149]
+#9  Symfony\Component\Console\Application->run() called at [/mnt/d/my/ubuntu/summer/suframe/core/Core.php:54]
+#10 suframe\core\Core->run() called at [/mnt/d/my/ubuntu/summer/proxy/summer.php:33]
+[2019-07-04 14:14:43 $985.0]	WARNING	swManager_check_exit_status: worker#0[pid=991] abnormal exit, status=255, signal=0
+[2019-07-04 14:20:58 $1082.0]	WARNING	swManager_check_exit_status: worker#0[pid=1088] abnormal exit, status=255, signal=0

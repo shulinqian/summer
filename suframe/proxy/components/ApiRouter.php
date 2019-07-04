@@ -1,12 +1,14 @@
 <?php
 
-namespace suframe\register\components;
+namespace suframe\proxy\components;
 
 use Exception;
+use suframe\core\traits\Singleton;
 use Swoole\Http\Request;
 
-class Proxy
+class ApiRouter
 {
+    use Singleton;
     /**
      * 服务代理转发
      * @param Request $request

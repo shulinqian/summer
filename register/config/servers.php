@@ -1,6 +1,4 @@
 <?php
 return array(
-    '/proxy' => array(
-
-    ),
+    '/proxy' => array(),
 );

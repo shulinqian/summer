@@ -7,6 +7,16 @@ class Server {
      */
     protected $server;
 
+    protected $registerPort;
+
+    /**
+     * @return mixed
+     */
+    public function getRegisterPort()
+    {
+        return $this->registerPort;
+    }
+
     /**
      * @param array $config
      * @return \Swoole\Http\Server
@@ -15,6 +25,11 @@ class Server {
     public function create(array $config) {
         $this->server = $server = new \Swoole\Http\Server($config['server']['listen'], $config['server']['port']);
         $this->set($config['swoole']);
+        $register = $config['register'] ?? null;
+        if($register){
+            $this->registerPort = $register['port'];
+            $this->server->listen($register['listen'], $register['port'], SWOOLE_SOCK_TCP);
+        }
         return $this->server;
     }
 

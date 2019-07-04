@@ -7,11 +7,11 @@
 namespace suframe\proxy\events;
 
 use Swoole\Coroutine;
+use Swoole\Http\Request;
 use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
 use Zend\EventManager\ListenerAggregateTrait;
-use Zend\Http\Request;
 
 class HttpListener implements ListenerAggregateInterface {
 	use ListenerAggregateTrait;
@@ -32,9 +32,8 @@ class HttpListener implements ListenerAggregateInterface {
 	public function request(EventInterface $e) {
 	    /** @var Request $request */
         $request = $e->getParam('request');
-        $headers = $request->getHeaders();
         //暂时用最简单的方案生成
-        $headers->addHeaderLine('request_id', session_create_id());
+        $request->get['x_request_id'] = session_create_id();
 	}
 
 }
