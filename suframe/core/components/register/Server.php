@@ -7,6 +7,7 @@
 namespace suframe\core\components\register;
 
 use suframe\core\components\Config;
+use suframe\core\components\rpc\RpcPack;
 use suframe\core\traits\Singleton;
 use Swoole\Client;
 use Swoole\Timer;
@@ -40,7 +41,7 @@ class Server
         if ($this->timer) {
             return false;
         }
-        $timerMs = $this->getConfig()->get('serverConfig.timerMs', 1000 * 60);
+        $timerMs = $this->getConfig()->get('proxy.timerMs', 1000 * 60);
         $timer = Timer::tick($timerMs, function () {
             static::getInstance()->check();
         });
@@ -82,13 +83,14 @@ class Server
     {
         $servers = $this->getConfig()->get('servers');
         $hasChange = false;
-        echo "check servers \n";
-        var_dump($servers->toArray());
+//        echo "check servers \n";
+//        var_dump($servers->toArray());
         //检测
         foreach ($servers as $server) {
             /** @var Config $item */
             foreach ($server as $key => $item) {
                 $client = new Client(SWOOLE_SOCK_TCP);
+//                echo "check: {$item['ip']}:{$item['port']}\n";
                 if (!@$client->connect($item['ip'], $item['port'], -1)) {
                     $hasChange = true;
                     //剔除
@@ -116,21 +118,25 @@ class Server
      */
     public function notify()
     {
-//        try {
+        try {
             $servers = $this->getConfig()->get('servers');
             //通知更新
+            $pack = new RpcPack('/summer/client/notify');
+            $pack->add('command', \suframe\core\components\register\Client::COMMAND_UPDATE_SERVERS);
             foreach ($servers as $server) {
                 /** @var Config $item */
                 foreach ($server as $key => $item) {
-                    $cli = new \Swoole\Coroutine\Http\Client($item['ip'], $item['port']);
-                    $cli->post('/summer/client/notify', array("command" => \suframe\core\components\register\Client::COMMAND_UPDATE_SERVERS));
-                    $rs = $cli->body;
-                    var_dump($rs);
-                    $cli->close();
+                    $client = new \Co\Client(SWOOLE_SOCK_TCP);
+                    if (!$client->connect($item['ip'], $item['port'], 0.5)) {
+                        exit("connect failed. Error: {$client->errCode}\n");
+                    }
+                    $client->send($pack->pack());
+//                    echo $client->recv();
+                    $client->close();
                 }
             }
-        /*} catch (\Exception $e) {
-        }*/
+        } catch (\Exception $e) {
+        }
     }
 
 }

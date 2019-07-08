@@ -1,5 +1,5 @@
 <?php
-namespace suframe\server;
+namespace suframe\services;
 
 use suframe\core\traits\Singleton;
 

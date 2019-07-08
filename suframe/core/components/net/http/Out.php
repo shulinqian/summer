@@ -9,7 +9,7 @@ namespace suframe\core\components\net\http;
 
 class Out
 {
-    public static function success($response, $data = [], $message = 'success')
+    public static function success($response, $data = [], $message = '')
     {
         return static::write($response, $message, 200, $data);
     }
@@ -49,9 +49,11 @@ class Out
     {
         $rs = [
             'code' => $code,
-            'message' => $message,
             'data' => $data,
         ];
+        if($message){
+            $rs['message'] = $message;
+        }
         $response->write(json_encode($rs));
         return $rs;
     }

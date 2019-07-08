@@ -29,7 +29,7 @@ class ApiRouter
         $className = ucfirst($className);
         $apiName[] = $className;
         $apiName = implode('\\', $apiName);
-        $apiClass = '\suframe\register\api\\' . $apiName;
+        $apiClass = '\suframe\proxy\api\\' . $apiName;
 
         if (!class_exists($apiClass)) {
             throw new Exception('api class not found');
@@ -38,7 +38,6 @@ class ApiRouter
         if (!method_exists($api, $methodName)) {
             throw new Exception('api method not found');
         }
-
         $args = $request->post ?: [];
         $rs = $api->$methodName($args);
         return $rs;

@@ -8,7 +8,6 @@ use suframe\core\components\event\EventManager;
 use suframe\core\components\net\http\Out;
 use suframe\core\components\net\http\Server;
 use suframe\core\components\net\http\Proxy;
-use suframe\core\components\register\Client;
 use suframe\core\traits\Singleton;
 use suframe\proxy\components\ApiRouter;
 use Swoole\Http\Request;
@@ -86,13 +85,13 @@ class HttpDriver
     public function onRequest(Request $request, Response $response)
     {
         //注册服务
-        if($request->server['server_port'] == $this->registerPort){
+        if ($request->server['server_port'] == $this->registerPort) {
             try {
                 $out = ApiRouter::getInstance()->dispatch($request);
             } catch (\Exception $e) {
                 return Out::error($response, $e->getMessage());
             }
-            if (!$out) {
+            if ($out === null) {
                 return Out::notFound($response);
             }
             Out::success($response, $out);
@@ -103,9 +102,12 @@ class HttpDriver
         $path = $request->server['path_info'];
         if ($path == '/favicon.ico') {
             return false;
-        } else if(strpos($path, '/summer/') === 0){
-            $response->status(404);
-            return false;
+        } else {
+            if (strpos($path, '/summer/') === 0) {
+                //保留接口
+                $response->status(404);
+                return false;
+            }
         }
         EventManager::get()->trigger('http.request', null, ['request' => &$request]);
         try {
@@ -117,7 +119,7 @@ class HttpDriver
         }
         if (!$out) {
             $response->status(500);
-            $response->write(null);
+            $response->write('error');
         }
         $response->write($out);
         go(function () use ($request, $out) {

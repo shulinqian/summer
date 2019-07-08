@@ -2,7 +2,7 @@
 return [
 	'server' => [
 		'listen' => '0.0.0.0',
-		'port' => 9501,
+		'port' => 8080,
 	],
     'register' => [
         'listen' => '0.0.0.0',
@@ -12,5 +12,6 @@ return [
     'swoole' => [
         'worker_num' => 5,
         'max_request' => 1000000,
-    ]
+    ],
+    'timerMs' => 1000 * 5
 ];

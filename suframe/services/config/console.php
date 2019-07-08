@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'app' => \suframe\register\App::class,
+    'app' => \suframe\services\App::class,
     'coreCommands' => ['tcp']
 ];

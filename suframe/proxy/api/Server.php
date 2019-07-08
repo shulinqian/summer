@@ -3,11 +3,7 @@
 
 namespace suframe\proxy\api;
 
-
-use suframe\core\components\Config;
-use suframe\register\components\SyncServers;
-use Swoole\Client;
-use Zend\Config\Writer\PhpArray;
+use suframe\core\components\register\Client as ClientAlias;
 
 class Server extends Base
 {
@@ -18,7 +14,7 @@ class Server extends Base
      * @throws \Exception
      */
     public function register($args){
-        $config = \suframe\core\components\register\Client::getInstance()->reloadServer();
+        $config = ClientAlias::getInstance()->reloadServer();
         $path = $args['path'];
         $server = $config->get('servers');
         //唯一key防止重复
@@ -37,7 +33,7 @@ class Server extends Base
 
         try{
             //写入配置
-            \suframe\core\components\register\Client::getInstance()->updateLocalFile($server);
+            ClientAlias::getInstance()->updateLocalFile($server);
             //通知服务更新
             \suframe\core\components\register\Server::getInstance()->notify();
             return true;
@@ -51,7 +47,7 @@ class Server extends Base
      * @return array
      */
     public function get(){
-        $config = \suframe\core\components\register\Client::getInstance()->reloadServer();
+        $config = ClientAlias::getInstance()->reloadServer();
         $servers = $config->get('servers');
         return $servers->toArray();
     }

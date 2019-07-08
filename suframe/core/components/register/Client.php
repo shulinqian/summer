@@ -49,17 +49,14 @@ class Client
 
     /**
      * 注册
+     * @param array $serviceConfig
      * @throws Exception
      */
-    public function register()
+    public function register(array $serviceConfig)
     {
-        $app = Config::getInstance()->get('app');
-        if (!$app) {
-            throw new Exception('app no config');
-        }
         $config = $this->getRegisterConfig();
         $client = new \Swoole\Coroutine\Http\Client($config['ip'], $config['port']);
-        $client->post('/summer/server/register', $app->toArray());
+        $client->post('/summer/server/register', $serviceConfig);
         $rs = $client->body;
         $client->close();
         var_dump($rs);
