@@ -56,7 +56,6 @@ class Out
         }
         $rs = json_encode($rs);
         $server->send($fd, json_encode($rs));
-        $server->close($fd);
         return $rs;
     }
 }

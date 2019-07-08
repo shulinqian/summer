@@ -7,6 +7,7 @@
 namespace suframe\core\components\register;
 
 use suframe\core\components\Config;
+use suframe\core\components\net\http\Proxy;
 use suframe\core\components\rpc\RpcPack;
 use suframe\core\traits\Singleton;
 use Swoole\Client;
@@ -22,6 +23,10 @@ class Server
     use Singleton;
 
     protected $timer = [];
+    /**
+     * @var Proxy
+     */
+    protected $proxy;
 
 
     /**
@@ -36,11 +41,12 @@ class Server
      * 创建定时器
      * @return bool
      */
-    public function createTimer()
+    public function createTimer($proxy)
     {
         if ($this->timer) {
             return false;
         }
+        $this->proxy = $proxy;
         $timerMs = $this->getConfig()->get('proxy.timerMs', 1000 * 60);
         $timer = Timer::tick($timerMs, function () {
             static::getInstance()->check();
@@ -86,7 +92,7 @@ class Server
 //        echo "check servers \n";
 //        var_dump($servers->toArray());
         //检测
-        foreach ($servers as $server) {
+        foreach ($servers as $path => $server) {
             /** @var Config $item */
             foreach ($server as $key => $item) {
                 $client = new Client(SWOOLE_SOCK_TCP);
@@ -96,6 +102,7 @@ class Server
                     //剔除
                     echo "{$item['ip']}:{$item['port']}: has error\n";
                     unset($server[$key]);
+                    $this->proxy->removePool($path, $item['ip'], $item['port']);
                     continue;
                 }
                 echo "ok\n";

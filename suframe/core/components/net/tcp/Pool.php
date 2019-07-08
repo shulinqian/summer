@@ -6,7 +6,6 @@
 
 namespace suframe\core\components\net\tcp;
 
-use suframe\core\traits\Singleton;
 use Swoole\Client;
 use Swoole\Coroutine\Channel;
 

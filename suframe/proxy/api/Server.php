@@ -4,16 +4,18 @@
 namespace suframe\proxy\api;
 
 use suframe\core\components\register\Client as ClientAlias;
+use suframe\proxy\driver\HttpDriver;
 
 class Server extends Base
 {
 
     /**
      * @param $args
+     * @param HttpDriver $context
      * @return bool
      * @throws \Exception
      */
-    public function register($args){
+    public function register($args, $context){
         $config = ClientAlias::getInstance()->reloadServer();
         $path = $args['path'];
         $server = $config->get('servers');
