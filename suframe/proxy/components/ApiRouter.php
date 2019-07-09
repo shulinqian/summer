@@ -9,13 +9,15 @@ use Swoole\Http\Request;
 class ApiRouter
 {
     use Singleton;
+
     /**
      * 服务代理转发
      * @param Request $request
+     * @param $context
      * @return false|string
      * @throws Exception
      */
-    public function dispatch(Request $request)
+    public function dispatch(Request $request, $context)
     {
         $path = $request->server['path_info'];
         $path = ltrim($path, '/');
@@ -39,7 +41,7 @@ class ApiRouter
             throw new Exception('api method not found');
         }
         $args = $request->post ?: [];
-        $rs = $api->$methodName($args);
+        $rs = $api->$methodName($args, $context);
         return $rs;
     }
 

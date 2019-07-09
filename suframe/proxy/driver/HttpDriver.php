@@ -72,7 +72,7 @@ class HttpDriver
         $this->io->text('<info>open:</info> ' . $listen . ':' . $this->config['server']['port']);
         go(function () {
             //启动定时器
-            \suframe\core\components\register\Server::getInstance()->createTimer();
+            \suframe\core\components\register\Server::getInstance()->createTimer($this->proxy);
         });
     }
 
@@ -87,7 +87,7 @@ class HttpDriver
         //注册服务
         if ($request->server['server_port'] == $this->registerPort) {
             try {
-                $out = ApiRouter::getInstance()->dispatch($request);
+                $out = ApiRouter::getInstance()->dispatch($request, $this);
             } catch (\Exception $e) {
                 return Out::error($response, $e->getMessage());
             }
@@ -102,13 +102,8 @@ class HttpDriver
         $path = $request->server['path_info'];
         if ($path == '/favicon.ico') {
             return false;
-        } else {
-            if (strpos($path, '/summer/') === 0) {
-                //保留接口
-                $response->status(404);
-                return false;
-            }
         }
+
         EventManager::get()->trigger('http.request', null, ['request' => &$request]);
         try {
             $out = $this->proxy->dispatch($request);
@@ -120,6 +115,7 @@ class HttpDriver
         if (!$out) {
             $response->status(500);
             $response->write('error');
+            return false;
         }
         $response->write($out);
         go(function () use ($request, $out) {

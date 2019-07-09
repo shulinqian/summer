@@ -54,6 +54,7 @@ class Proxy
 
     public function dispatchData($data)
     {
+        echo "has new request\n";
         $dataArr = json_decode($data, true);
         if (!$dataArr) {
             return false;
@@ -69,13 +70,13 @@ class Proxy
     {
         $pool = $this->getPool(ltrim($path, '/'));
         if ($pool) {
-            $client = $pool['client']->get();
+            $client = $pool->get();
             if ($client) {
                 //链接端口可能会出警告
-                $ret = $client['client']->send($data);
+                $ret = $client->send($data);
                 if ($ret) {
                     //无法判断tcp 因为应用层无法获得底层TCP连接的状态，执行send或recv时应用层与内核发生交互，才能得到真实的连接可用状态
-                    $rs = $client['client']->recv();
+                    $rs = $client->recv();
                     if ($rs) {
                         $pool->put($client);
                         return $rs;
@@ -88,7 +89,7 @@ class Proxy
 
     /**
      * @param $uri
-     * @return array|bool
+     * @return \suframe\core\components\net\tcp\Pool|bool
      */
     protected function getPool($path)
     {
@@ -96,12 +97,9 @@ class Proxy
             return false;
         }
         foreach ($this->pools as $poolPath => $item) {
-            if ($poolPath == $path) {
+            if ($item && ($poolPath == $path)) {
                 $key = array_rand($item);
-                return [
-                    'path' => $poolPath,
-                    'client' => $item[$key]
-                ];
+                return $item[$key];
             }
         }
         $path = explode('/', $path);
@@ -109,7 +107,6 @@ class Proxy
         $path = implode('/', $path);
         if ($path) {
             $path = '/' . $path;
-            var_dump($path);
         }
         return $this->getPool($path);
     }
@@ -134,7 +131,7 @@ class Proxy
             $this->pools[$path] = [];
         }
         foreach ($config as $item) {
-            $key = md5($item['host'] . ':' . $item['port']);
+            $key = md5($item['ip'] . ':' . $item['port']);
             if (!isset($this->pools[$path])) {
                 $this->pools[$path] = [];
             }
