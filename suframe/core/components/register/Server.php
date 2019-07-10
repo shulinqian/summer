@@ -7,11 +7,12 @@
 namespace suframe\core\components\register;
 
 use suframe\core\components\Config;
-use suframe\core\components\net\http\Proxy;
+use suframe\core\components\register\Client as ClientAlias;
 use suframe\core\components\rpc\RpcPack;
+use suframe\core\components\swoole\ProcessTools;
 use suframe\core\traits\Singleton;
-use Swoole\Client;
-use Swoole\Timer;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\Filesystem\Filesystem;
 
 /**
  * 服务定时同步
@@ -22,101 +23,97 @@ class Server
 {
     use Singleton;
 
-    protected $timer = [];
-    /**
-     * @var Proxy
-     */
-    protected $proxy;
-
 
     /**
      * @return Config
      */
     public function getConfig(): Config
     {
-        return \suframe\core\components\register\Client::getInstance()->reloadServer();
+        return ClientAlias::getInstance()->reloadServer();
     }
 
     /**
-     * 创建定时器
+     * @param $args
      * @return bool
+     * @throws \Exception
      */
-    public function createTimer($proxy)
-    {
-        if ($this->timer) {
+    public function register($args){
+        $config = ClientAlias::getInstance()->reloadServer();
+        $path = $args['path'];
+        $server = $config->get('servers');
+        //唯一key防止重复
+        $key = md5($args['ip'] . $args['port']);
+        if(isset($server[$path])){
+            //已存在
+            if($server[$path]->get($key)){
+                throw new \Exception('exist');
+            }
+            $server[$path][$key] = ['ip' => $args['ip'], 'port' => $args['port']];
+        } else {
+            $server[$path] = [
+                $key => ['ip' => $args['ip'], 'port' => $args['port']]
+            ];
+        }
+        try{
+            //写入api配置
+            ClientAlias::getInstance()->updateLocalFile($server);
+        } catch (\Exception $e){
             return false;
         }
-        $this->proxy = $proxy;
-        $timerMs = $this->getConfig()->get('proxy.timerMs', 1000 * 60);
-        $timer = Timer::tick($timerMs, function () {
-            static::getInstance()->check();
-        });
-        $this->timer = [
-            'created_time' => date('Y-m-d H:i:s'),
-            'timer' => $timer
-        ];
-        return true;
+
+        //rpc服务更新
+        $this->registerRpc($path, $args['rpc'] ?? []);
+        //通知服务更新
+        $this->notify();
+        //重启
+        ProcessTools::kill();
     }
 
-    /**
-     * 检测定时器
-     * @return array
-     */
-    public function checkTimer()
-    {
-        return $this->timer;
-    }
-
-    /**
-     * 清除定时器
-     * @return bool
-     */
-    public function clearTimer()
-    {
-        if ($this->timer) {
-            Timer::clear($this->timer['timer']);
-            $this->timer = [];
-            return true;
+    public function registerRpc($path, $rpc){
+        if(!$rpc){
+            return false;
         }
-        return false;
-    }
-
-    /**
-     * 检测服务
-     * @return bool
-     */
-    public function check()
-    {
-        $servers = $this->getConfig()->get('servers');
-        $hasChange = false;
-//        echo "check servers \n";
-//        var_dump($servers->toArray());
-        //检测
-        foreach ($servers as $path => $server) {
-            /** @var Config $item */
-            foreach ($server as $key => $item) {
-                $client = new Client(SWOOLE_SOCK_TCP);
-//                echo "check: {$item['ip']}:{$item['port']}\n";
-                if (!@$client->connect($item['ip'], $item['port'], -1)) {
-                    $hasChange = true;
-                    //剔除
-                    echo "{$item['ip']}:{$item['port']}: has error\n";
-                    unset($server[$key]);
-                    $this->proxy->removePool($path, $item['ip'], $item['port']);
-                    continue;
-                }
-                echo "ok\n";
-                $client->close();
+        $savePath = SUMMER_APP_ROOT . 'runtime/rpc' . $path;
+        $fs = new Filesystem();
+        if(!is_dir($savePath)){
+            //创建目录
+            try {
+                $fs->mkdir($savePath, '0700');
+            } catch (IOExceptionInterface $e) {
+                echo "An error occurred while creating your directory at ".$e->getPath();
+                return false;
             }
         }
-        if ($hasChange) {
-            $config = Config::getInstance();
-            $servers = $config->get('servers');
-            \suframe\core\components\register\Client::getInstance()->updateLocalFile($servers->toArray());
-            echo "notify \n";
-            $this->notify();
+        $nameSpace = 'app\runtime\rpc\\' . ltrim($path, '/') . ';';
+        $methods = '';
+        foreach ($rpc as $class => $items) {
+            foreach ($items as $item) {
+                $parameters = [];
+                foreach ($item['parameters'] as $parameter) {
+                    $str = $parameter['type'] ? $parameter['type'] . ' ' : '';
+                    $str .= '$' . $parameter['name'];
+                    $str .= $parameter['default'] ? ' = ' . $parameter['default'] : '';
+                    $parameters[] = $str;
+                }
+                $parametersStr = implode(', ', $parameters);
+                $methods .= <<<EOF
+
+    {$item['doc']}
+    public function {$item['name']} ({$parametersStr});
+    
+EOF;
+            }
+            $content = <<<EOF
+<?php
+namespace {$nameSpace};
+
+interface {$class}
+{
+{$methods}
+}
+EOF;
+            $fs->dumpFile($savePath . '/' . $class . '.php', $content);
         }
-        return true;
     }
 
     /**
@@ -129,7 +126,7 @@ class Server
             $servers = $this->getConfig()->get('servers');
             //通知更新
             $pack = new RpcPack('/summer/client/notify');
-            $pack->add('command', \suframe\core\components\register\Client::COMMAND_UPDATE_SERVERS);
+            $pack->add('command', ClientAlias::COMMAND_UPDATE_SERVERS);
             foreach ($servers as $server) {
                 /** @var Config $item */
                 foreach ($server as $key => $item) {

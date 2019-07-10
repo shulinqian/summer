@@ -8,10 +8,12 @@ return [
         'listen' => '0.0.0.0',
         'port' => 9500,
     ],
-    'dispatch_type' => 'http',
+    'dispatchType' => 'http',
     'swoole' => [
         'worker_num' => 5,
         'max_request' => 1000000,
+        'log_file' => SUMMER_APP_ROOT . 'runtime/swoole.log',
+        'pid_file' => SUMMER_APP_ROOT . 'runtime/swoole.pid'
     ],
-    'timerMs' => 1000 * 5
+    'timerMs' => 1000 * 5 //定时检测
 ];

@@ -8,6 +8,7 @@ use suframe\core\components\event\EventManager;
 use suframe\core\components\net\http\Out;
 use suframe\core\components\net\http\Server;
 use suframe\core\components\net\http\Proxy;
+use suframe\core\components\register\Timer as TimerAlias;
 use suframe\core\traits\Singleton;
 use suframe\proxy\components\ApiRouter;
 use Swoole\Http\Request;
@@ -40,9 +41,7 @@ class HttpDriver
         $this->io = new SymfonyStyle($input, $output);
         $config = Config::getInstance();
         $http = new Server();
-        $this->config = $config->get('proxy')->toArray();
-        //设置代理
-        $this->initProxy();
+        $this->config = $config->get('tcp')->toArray();
         //守护进程运行
         if (true === $input->hasParameterOption(['--daemon', '-d'], true)) {
             $this->config['swoole']['daemonize'] = 1;
@@ -66,13 +65,14 @@ class HttpDriver
      */
     public function onStart()
     {
+        //设置代理
         $this->io->success('tcp server is running');
         $ip = swoole_get_local_ip();
         $listen = $this->config['server']['listen'] == '0.0.0.0' ? array_shift($ip) : $this->config['server']['listen'];
         $this->io->text('<info>open:</info> ' . $listen . ':' . $this->config['server']['port']);
         go(function () {
             //启动定时器
-            \suframe\core\components\register\Server::getInstance()->createTimer($this->proxy);
+            TimerAlias::getInstance()->createTimer();
         });
     }
 
@@ -86,27 +86,45 @@ class HttpDriver
     {
         //注册服务
         if ($request->server['server_port'] == $this->registerPort) {
-            try {
-                $out = ApiRouter::getInstance()->dispatch($request, $this);
-            } catch (\Exception $e) {
-                return Out::error($response, $e->getMessage());
-            }
-            if ($out === null) {
-                return Out::notFound($response);
-            }
-            Out::success($response, $out);
-            return true;
+           $this->apiDispatch($request, $response);
+        } else {
+            $this->dispatch($request, $response);
         }
+    }
 
-        //转发
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @return array|bool
+     */
+    protected function apiDispatch($request, $response){
+        try {
+            $out = ApiRouter::getInstance()->dispatch($request);
+        } catch (\Exception $e) {
+            return Out::error($response, $e->getMessage());
+        }
+        if ($out === null) {
+            return Out::notFound($response);
+        }
+        Out::success($response, $out);
+        return true;
+    }
+
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @return bool
+     */
+    protected function dispatch($request, $response){
         $path = $request->server['path_info'];
         if ($path == '/favicon.ico') {
             return false;
         }
-
+        $response->header('Content-Type', 'application/json');
         EventManager::get()->trigger('http.request', null, ['request' => &$request]);
         try {
-            $out = $this->proxy->dispatch($request);
+            $proxy = Proxy::getInstance();
+            $out = $proxy->dispatch($request);
         } catch (\Exception $e) {
             $response->status(500);
             $response->write($e->getMessage());
@@ -127,27 +145,6 @@ class HttpDriver
     }
 
     /**
-     * tcp请求回调
-     * @param \Swoole\Server $server
-     * @param $fd
-     * @param $reactor_id
-     * @param $data
-     */
-    public function onReceiveTcp(\Swoole\Server $server, $fd, $reactor_id, $data)
-    {
-        EventManager::get()->trigger('tcp.request', $this, ['data' => &$data]);
-        $out = $this->proxy->dispatch($data);
-        $server->send($fd, $out);
-        $server->close($fd);
-        go(function () use ($data, $out) {
-            EventManager::get()->trigger('tcp.response.after', $this, [
-                'request' => $data,
-                'out' => $out,
-            ]);
-        });
-    }
-
-    /**
      * 服务结束
      */
     public function onShutdown()
@@ -155,21 +152,5 @@ class HttpDriver
         EventManager::get()->trigger('tcp.shutDown', $this);
     }
 
-    /**
-     * @throws \Exception
-     */
-    protected function initProxy()
-    {
-        $servers = $config = Config::getInstance()->get('servers');
-        $this->proxy = new Proxy($servers);
-    }
-
-    /**
-     * @return Proxy
-     */
-    public function getProxy(): Proxy
-    {
-        return $this->proxy;
-    }
 }
 

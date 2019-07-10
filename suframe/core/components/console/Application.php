@@ -31,13 +31,11 @@ class Application extends \Symfony\Component\Console\Application
      */
     public function registerGroups(string $namespace, string $basePath): self
     {
-        $length   = \strlen($basePath) + 1;
+        $length   = \strlen($basePath);
         $finder = new Finder();
         $finder->name('*Command.php');
-
-        $commands = [];
         foreach ($finder->in($basePath) as $file) {
-            $class = $namespace . '\\' . \substr($file, $length - 1, -4);
+            $class = $namespace . '\\' . \substr($file, $length, -4);
             $this->add(new $class);
         }
         return $this;

@@ -6,8 +6,8 @@
 
 namespace suframe\core\components\net\http;
 
-
 use suframe\core\components\rpc\RpcPack;
+use suframe\core\traits\Singleton;
 use Swoole\Client;
 use Swoole\Http\Request;
 
@@ -18,22 +18,43 @@ use Swoole\Http\Request;
  */
 class Proxy
 {
+    use Singleton;
+
     protected $counter = 0;
     protected $resultError = 0;
     protected $pools;
     protected $config;
 
-    public function __construct($config)
+    protected $key;
+
+    public function __construct()
     {
-        $this->config = $config;
+        echo "new proxy created\n";
+        $this->config = \suframe\core\components\register\Client::getInstance()->reloadServer()['servers'];
         $this->initPools();
     }
 
     protected function initPools()
     {
+        $this->key = rand(1, 9999);
         foreach ($this->config as $path => $item) {
             $this->addPool($path, $item);
         }
+    }
+
+    public function updatePool($path, $ip, $port)
+    {
+        if (isset($this->pools[$path])) {
+            foreach ($this->pools[$path] as $item) {
+                while ($client = $item->get()) {
+                    $client->close();
+                }
+            }
+            unset($this->pools[$path]);
+        }
+        $this->addPool($path, [
+            ['ip' => $ip, 'port' => $port]
+        ]);
     }
 
     public function dispatch(Request $request)
@@ -68,7 +89,10 @@ class Proxy
 
     public function sendData($path, $data = '')
     {
-        $pool = $this->getPool(ltrim($path, '/'));
+        //为了效率，避免一层层的遍历，目前只支持1级目录代理
+        $router = explode('/', ltrim($path, '/'));
+        $router = array_shift($router);
+        $pool = $this->getPool($router);
         if ($pool) {
             $client = $pool->get();
             if ($client) {
@@ -97,18 +121,18 @@ class Proxy
             return false;
         }
         foreach ($this->pools as $poolPath => $item) {
-            if ($item && ($poolPath == $path)) {
+            if ($item && ($poolPath == '/' . $path)) {
                 $key = array_rand($item);
                 return $item[$key];
             }
         }
-        $path = explode('/', $path);
-        array_pop($path);
+        return false;
+        /*$path = explode('/', $path);
         $path = implode('/', $path);
         if ($path) {
             $path = '/' . $path;
         }
-        return $this->getPool($path);
+        return $this->getPool($path);*/
     }
 
     /**
@@ -130,6 +154,7 @@ class Proxy
         if (!isset($this->pools[$path])) {
             $this->pools[$path] = [];
         }
+
         foreach ($config as $item) {
             $key = md5($item['ip'] . ':' . $item['port']);
             if (!isset($this->pools[$path])) {

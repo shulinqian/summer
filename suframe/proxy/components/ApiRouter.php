@@ -13,11 +13,10 @@ class ApiRouter
     /**
      * 服务代理转发
      * @param Request $request
-     * @param $context
      * @return false|string
      * @throws Exception
      */
-    public function dispatch(Request $request, $context)
+    public function dispatch(Request $request)
     {
         $path = $request->server['path_info'];
         $path = ltrim($path, '/');
@@ -41,7 +40,7 @@ class ApiRouter
             throw new Exception('api method not found');
         }
         $args = $request->post ?: [];
-        $rs = $api->$methodName($args, $context);
+        $rs = $api->$methodName($args);
         return $rs;
     }
 

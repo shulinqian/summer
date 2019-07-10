@@ -1,7 +1,0 @@
-[2019-07-08 23:11:55 *1144.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 125 byte failed, because connection[fd=1] is closed
-[2019-07-08 23:12:32 *1151.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 125 byte failed, because connection[fd=1] is closed
-[2019-07-08 23:15:31 *1191.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 125 byte failed, because connection[fd=1] is closed
-[2019-07-08 23:20:19 *1226.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 125 byte failed, because connection[fd=1] is closed
-[2019-07-08 23:20:28 *1226.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 125 byte failed, because connection[fd=4] is closed
-[2019-07-08 23:48:27 *1426.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 125 byte failed, because connection[fd=1] is closed
-[2019-07-08 23:48:54 *1433.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 125 byte failed, because connection[fd=4] is closed

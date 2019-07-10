@@ -5,7 +5,7 @@ return [
 		'port' => 8080,
 	],
     'swoole' => [
-        'log_file' => SUMMER_APP_ROOT . 'runtime/service.log',
-        'pid_file' => SUMMER_APP_ROOT . 'runtime/service.pid'
+        'log_file' => SUMMER_APP_ROOT . 'runtime/swoole.log',
+        'pid_file' => SUMMER_APP_ROOT . 'runtime/swoole.pid'
     ],
 ];

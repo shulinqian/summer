@@ -36,7 +36,7 @@ class TcpDriver {
         $this->io = new SymfonyStyle($input, $output);
         $config = Config::getInstance();
         $tcp = new Server();
-        $this->config = $config->get('proxy')->toArray();
+        $this->config = $config->get('tcp')->toArray();
         //设置代理
         $this->initProxy();
         //守护进程运行

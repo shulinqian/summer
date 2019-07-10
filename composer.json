@@ -15,7 +15,8 @@
     "symfony/console": "^4.3",
     "symfony/finder": "^4.3",
     "zendframework/zend-http": "^2.10",
-    "ext-json": "*"
+    "ext-json": "*",
+    "symfony/filesystem": "^4.3"
   },
   "require-dev": {
     "swoole/ide-helper": "@dev"

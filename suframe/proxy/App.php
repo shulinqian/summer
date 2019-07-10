@@ -20,8 +20,8 @@ class App
      */
     public function run(InputInterface $input, OutputInterface $output)
     {
-        $dispatch_type = Config::getInstance()->get('proxy.dispatch_type', 'http');
-        switch ($dispatch_type){
+        $dispatchType = Config::getInstance()->get('tcp.dispatchType', 'http');
+        switch ($dispatchType){
             case 'http':
                 HttpDriver::getInstance()->run($input, $output);
                 break;

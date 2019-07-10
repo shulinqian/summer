@@ -2,14 +2,17 @@
 
 namespace app\rpc;
 
-class User
+class UserRpc
 {
 
     /**
-     * @param string $name
+     * 用户接口
+     *
+     * @param array $name
+     * @param array $cond
      * @return array
      */
-    public function search(string $name): array
+    public function search(string $name,array $cond = []): array
     {
         return [
             ['id' => 1, 'name' => 'orders1'],

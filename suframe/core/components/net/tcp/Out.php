@@ -54,7 +54,6 @@ class Out
         if($message){
             $rs['message'] = $message;
         }
-        $rs = json_encode($rs);
         $server->send($fd, json_encode($rs));
         return $rs;
     }

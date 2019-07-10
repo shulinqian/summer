@@ -2,10 +2,14 @@
 
 namespace suframe\core\components\register;
 
+use ReflectionClass;
+use ReflectionMethod;
+use ReflectionParameter;
 use suframe\core\components\Config;
 use Exception;
 use suframe\core\traits\Singleton;
 use Swoole\Http\Request;
+use Symfony\Component\Finder\Finder;
 use Zend\Config\Writer\PhpArray;
 
 
@@ -54,12 +58,58 @@ class Client
      */
     public function register(array $serviceConfig)
     {
+        $serviceConfig['rpc'] = $this->registerRpc();
         $config = $this->getRegisterConfig();
         $client = new \Swoole\Coroutine\Http\Client($config['ip'], $config['port']);
         $client->post('/summer/server/register', $serviceConfig);
         $rs = $client->body;
         $client->close();
         var_dump($rs);
+    }
+
+    /**
+     * 注册rpc接口
+     * @return array|bool
+     * @throws \ReflectionException
+     */
+    public function registerRpc(){
+        $rpcPath = Config::getInstance()->get('app.rpcPath', SUMMER_APP_ROOT . 'rpc');
+        if(!is_dir($rpcPath)){
+            return false;
+        }
+        $length   = \strlen($rpcPath);
+        $finder = new Finder();
+        $finder->name('*.php');
+        $namespace = Config::getInstance()->get('app.rpcNameSpace', '\app\rpc\\');
+        $rpc = [];
+        foreach ($finder->in($rpcPath) as $file) {
+            $class = $namespace . \substr($file, $length + 1, -4);
+            if(!class_exists($class)){
+                return false;
+            }
+            $ref = new ReflectionClass($class);
+            $className = $ref->getShortName();
+            $rpc[$className] = [];
+            $methods = $ref->getMethods(ReflectionMethod::IS_PUBLIC);
+            foreach ($methods as $method) {
+                //参数解析
+                $parameters = array_map(function (ReflectionParameter $value){
+                    $type = $value->hasType() ? $value->getType()->getName() : null;
+                    return [
+                        'name' => $value->getName(),
+                        'require' => !$value->isDefaultValueAvailable(),
+                        'type' => $type,
+                        'default' => $value->isDefaultValueAvailable() ? $value->getDefaultValue() : null,
+                    ];
+                }, $method->getParameters());
+                $rpc[$className][] = [
+                    'name' => $method->getName(),
+                    'parameters' => $parameters,
+                    'doc' => $method->getDocComment()
+                ];
+            }
+        }
+        return $rpc;
     }
 
     /**
