@@ -7,6 +7,7 @@
 namespace suframe\core\components\register;
 
 use suframe\core\components\Config;
+use suframe\core\components\register\Client as ClientAlias;
 use suframe\core\components\swoole\ProcessTools;
 use suframe\core\traits\Singleton;
 use Swoole\Client;
@@ -28,7 +29,7 @@ class Timer
      */
     public function getConfig(): Config
     {
-        return \suframe\core\components\register\Client::getInstance()->reloadServer();
+        return ClientAlias::getInstance()->reloadServer();
     }
 
     /**
@@ -101,8 +102,8 @@ class Timer
         if ($hasChange) {
             $config = Config::getInstance();
             $servers = $config->get('servers');
-            \suframe\core\components\register\Client::getInstance()->updateLocalFile($servers->toArray());
-            Server::getInstance()->notify();
+            ClientAlias::getInstance()->updateLocalFile($servers->toArray());
+            Server::getInstance()->notify(ClientAlias::COMMAND_UPDATE_SERVERS);
             //重启服务
             ProcessTools::kill();
             echo "notify \n";

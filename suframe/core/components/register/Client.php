@@ -114,10 +114,9 @@ class Client
 
     /**
      * 更新
-     * @param Request $request
      * @throws Exception
      */
-    public function commandUpdateServers(Request $request)
+    public function commandUpdateServers()
     {
         $config = $this->getRegisterConfig();
         $client = new \Swoole\Coroutine\Http\Client($config['ip'], $config['port']);
@@ -132,6 +131,28 @@ class Client
         $data = $rs['data'] ?? [];
         $this->updateLocalFile($data);
         return true;
+    }
+
+    /**
+     * @return bool
+     * @throws Exception
+     */
+    public function syncRpc(){
+        $config = $this->getRegisterConfig();
+        $client = new \Swoole\Coroutine\Http\Client($config['ip'], $config['port']);
+        $client->post('/summer/server/syncRpc', []);
+        $rs = $client->body;
+        $client->close();
+        $rs = json_decode($rs, true);
+        if(!$rs){
+            return false;
+        }
+        if(($rs['code'] == 200) && $rs['data']){
+            $file = SUMMER_APP_ROOT . 'config/.phpstorm.meta.php';
+            file_put_contents($file, $rs['data']);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -156,4 +177,5 @@ class Client
         $config->loadFileByName($file, 'servers');
         return $config;
     }
+
 }

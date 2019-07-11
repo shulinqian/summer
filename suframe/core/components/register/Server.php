@@ -13,6 +13,7 @@ use suframe\core\components\swoole\ProcessTools;
 use suframe\core\traits\Singleton;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 
 /**
  * 服务定时同步
@@ -41,6 +42,9 @@ class Server
         $config = ClientAlias::getInstance()->reloadServer();
         $path = $args['path'];
         $server = $config->get('servers');
+        //rpc服务更新
+        $this->registerRpc($path, $args['rpc'] ?? []);
+
         //唯一key防止重复
         $key = md5($args['ip'] . $args['port']);
         if(isset($server[$path])){
@@ -60,39 +64,39 @@ class Server
         } catch (\Exception $e){
             return false;
         }
-
-        //rpc服务更新
-        $this->registerRpc($path, $args['rpc'] ?? []);
         //通知服务更新
-        $this->notify();
+        $this->notify(ClientAlias::COMMAND_UPDATE_SERVERS);
         //重启
         ProcessTools::kill();
+        return true;
     }
 
     public function registerRpc($path, $rpc){
-        if(!$rpc){
+        if(!$rpc || (strpos($path, '.') !== false)){
             return false;
         }
         $savePath = SUMMER_APP_ROOT . 'runtime/rpc' . $path;
         $fs = new Filesystem();
+        //删除目录
         if(!is_dir($savePath)){
-            //创建目录
-            try {
-                $fs->mkdir($savePath, '0700');
-            } catch (IOExceptionInterface $e) {
-                echo "An error occurred while creating your directory at ".$e->getPath();
-                return false;
-            }
+            $fs->remove($savePath);
         }
-        $nameSpace = 'app\runtime\rpc\\' . ltrim($path, '/') . ';';
+        //创建目录
+        try {
+            $fs->mkdir($savePath, '0755');
+        } catch (IOExceptionInterface $e) {
+            echo "An error occurred while creating your directory at ".$e->getPath();
+            return false;
+        }
+
         $methods = '';
         foreach ($rpc as $class => $items) {
             foreach ($items as $item) {
                 $parameters = [];
                 foreach ($item['parameters'] as $parameter) {
-                    $str = $parameter['type'] ? $parameter['type'] . ' ' : '';
+                    $str = isset($parameter['type']) && $parameter['type'] ? $parameter['type'] . ' ' : '';
                     $str .= '$' . $parameter['name'];
-                    $str .= $parameter['default'] ? ' = ' . $parameter['default'] : '';
+                    $str .= isset($parameter['default']) && $parameter['default'] ? ' = ' . $parameter['default'] : '';
                     $parameters[] = $str;
                 }
                 $parametersStr = implode(', ', $parameters);
@@ -104,29 +108,76 @@ class Server
 EOF;
             }
             $content = <<<EOF
-<?php
-namespace {$nameSpace};
-
 interface {$class}
 {
 {$methods}
 }
 EOF;
-            $fs->dumpFile($savePath . '/' . $class . '.php', $content);
+            $fs->dumpFile($savePath . '/' . $class . '.tpl', $content);
         }
+    }
+
+    /**
+     * 生成meta文件
+     * @return string
+     */
+    public function buildRpcMeta(){
+        $savePath = SUMMER_APP_ROOT . 'runtime/rpc';
+        $finder = new Finder();
+        $finder->depth('< 2')->name('*Rpc.tpl');
+        $finder->files()->in($savePath);
+        $interfaces = [];
+        foreach ($finder as $file) {
+            $name = $file->getPathInfo()->getFilename();
+            if(!isset($interfaces[$name])){
+                $interfaces[$name] = [];
+            }
+            $key = $file->getFilenameWithoutExtension();
+            $interfaces[$name][$key] = $file->getContents();
+        }
+        $pathName = [];
+        $contents = [];
+        foreach ($interfaces as $name => $interface) {
+            foreach ($interface as $className => $content) {
+                $pathName[] = "'/{$name}/{$className}' => \\app\\runtime\\rpc\\{$name}\\{$className}::class,";
+
+            }
+            $interfaceContent = implode("\n", $interface);
+            $contents[] = <<<EOF
+namespace app\\runtime\\rpc\\{$name};
+
+{$interfaceContent}
+EOF;
+
+        }
+        $contentStr = implode("\n", $contents);
+        $pathStr = implode("\n            ", $pathName);
+
+        return <<<EOF
+<?php
+namespace PHPSTORM_META {
+    use suframe\\core\\components\\rpc\\SRpcInterface;
+    override( SRpcInterface::route(0),
+        map( [
+            {$pathStr}
+        ]));
+}
+
+{$contentStr}
+EOF;
     }
 
     /**
      * 耿直服务更新
      * @return bool
      */
-    public function notify()
+    public function notify($command)
     {
         try {
             $servers = $this->getConfig()->get('servers');
             //通知更新
             $pack = new RpcPack('/summer/client/notify');
-            $pack->add('command', ClientAlias::COMMAND_UPDATE_SERVERS);
+            $pack->add('command', $command);
             foreach ($servers as $server) {
                 /** @var Config $item */
                 foreach ($server as $key => $item) {

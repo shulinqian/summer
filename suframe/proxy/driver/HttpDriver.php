@@ -98,6 +98,7 @@ class HttpDriver
      * @return array|bool
      */
     protected function apiDispatch($request, $response){
+        $response->header('Content-Type', 'application/json');
         try {
             $out = ApiRouter::getInstance()->dispatch($request);
         } catch (\Exception $e) {

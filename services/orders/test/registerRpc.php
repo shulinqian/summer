@@ -3,6 +3,7 @@
 /** @var Composer\Autoload\ClassLoader $loader */
 use Composer\Autoload\ClassLoader;
 use suframe\core\components\Config;
+use suframe\core\components\rpc\SRpc;
 use Symfony\Component\Finder\Finder;
 
 $loader = require_once dirname(__DIR__) . '/../../vendor/autoload.php';
@@ -13,9 +14,13 @@ $args = $argv;
 array_shift($args);
 $summer = \suframe\services\Core::getInstance()->init();
 
+$rs = SRpc::route('/orders/OrdersRpc')->getList('sss', 'bbbb', ['ssss']);
 
+var_dump($rs);
+
+/*
 $client = \suframe\core\components\register\Client::getInstance();
 $rpc = $client->registerRpc();
 
 $server = \suframe\core\components\register\Server::getInstance();
-$server->registerRpc('/orders', $rpc);
+$server->registerRpc('/orders', $rpc);*/

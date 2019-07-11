@@ -18,8 +18,14 @@ class Proxy
         $path = $pack->get('path');
         $path = ltrim($path, '/');
         $apiName = explode('/', $path);
+        $isRpc = false;
         if ($apiName[0] === 'summer') {
             $nameSpace = '\suframe\services\api\\';
+            array_shift($apiName);
+        } else if($apiName[0] === 'rpc'){
+            $isRpc = true;
+            $nameSpace = Config::getInstance()->get('app.rpcNameSpace');
+            array_shift($apiName);
         } else {
             $nameSpace = Config::getInstance()->get('app.apiNameSpace');
         }
@@ -27,18 +33,33 @@ class Proxy
         $className = array_pop($apiName);
         $className = ucfirst($className);
         $apiName[] = $className;
-        $apiName = implode('\\', $apiName);
-        $apiClass = $nameSpace . $apiName;
+        $className = implode('\\', $apiName);
+        $apiClass = $nameSpace . $className;
 
-        if (!class_exists($apiClass)) {
-            throw new Exception('api class not found:' . $apiClass);
+        if (class_exists($apiClass)) {
+            $methodName = 'run';
+        } else {
+            $methodName = array_pop($apiName);
+            $className = implode('\\', $apiName);
+            $apiClass = $nameSpace . $className;
+            if (!class_exists($apiClass)) {
+                throw new Exception('api class not found:' . $apiClass);
+            }
         }
+
         $api = new $apiClass;
-        $methodName = 'run';
+
         if (!method_exists($api, $methodName)) {
-            throw new Exception('api method not found');
+            throw new Exception('api method not found:' . $methodName);
         }
-        $rs = $api->$methodName($pack->get());
+        if($isRpc){
+            $parmas = $pack->get();
+            unset($parmas['path']);
+            $rs = $api->$methodName(...$parmas);
+            return $rs;
+        }
+        $parmas = $pack->get();
+        $rs = $api->$methodName($parmas);
         return $rs;
     }
 

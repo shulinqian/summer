@@ -6,9 +6,9 @@
 
 namespace suframe\core\components\net\http;
 
+use suframe\core\components\register\Client;
 use suframe\core\components\rpc\RpcPack;
 use suframe\core\traits\Singleton;
-use Swoole\Client;
 use Swoole\Http\Request;
 
 /**
@@ -30,7 +30,7 @@ class Proxy
     public function __construct()
     {
         echo "new proxy created\n";
-        $this->config = \suframe\core\components\register\Client::getInstance()->reloadServer()['servers'];
+        $this->config = Client::getInstance()->reloadServer()['servers'];
         $this->initPools();
     }
 
@@ -40,21 +40,6 @@ class Proxy
         foreach ($this->config as $path => $item) {
             $this->addPool($path, $item);
         }
-    }
-
-    public function updatePool($path, $ip, $port)
-    {
-        if (isset($this->pools[$path])) {
-            foreach ($this->pools[$path] as $item) {
-                while ($client = $item->get()) {
-                    $client->close();
-                }
-            }
-            unset($this->pools[$path]);
-        }
-        $this->addPool($path, [
-            ['ip' => $ip, 'port' => $port]
-        ]);
     }
 
     public function dispatch(Request $request)
@@ -165,22 +150,6 @@ class Proxy
             }
             $this->pools[$path][$key] = new Pool($item['ip'], $item['port'], $item['size'] ?? 1,
                 $item['overflowMax'] ?? null);
-        }
-    }
-
-    /**
-     * 动态删除连接池
-     * @param $name
-     */
-    public function removePool($path, $host, $port)
-    {
-        $key = md5($host . ':' . $port);
-        if (isset($this->pools[$path]) && isset($this->pools[$path][$key])) {
-            /** @var Client $client */
-            while ($client = $this->pools[$path][$key]->get()) {
-                $client->close();
-            }
-            unset($this->pools[$path][$key]);
         }
     }
 

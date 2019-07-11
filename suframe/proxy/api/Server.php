@@ -16,7 +16,7 @@ class Server extends Base
      * @throws \Exception
      */
     public function register($args){
-        \suframe\core\components\register\Server::getInstance()->register($args);
+        return \suframe\core\components\register\Server::getInstance()->register($args);
     }
 
     /**
@@ -27,6 +27,13 @@ class Server extends Base
         $config = ClientAlias::getInstance()->reloadServer();
         $servers = $config->get('servers');
         return $servers->toArray();
+    }
+
+    /**
+     *
+     */
+    public function syncRpc(){
+        return \suframe\core\components\register\Server::getInstance()->buildRpcMeta();
     }
 
 }

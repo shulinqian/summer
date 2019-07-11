@@ -6,12 +6,15 @@
 
 namespace suframe\core\components\rpc;
 
-
 class SRpc implements SRpcInterface
 {
 
+    /**
+     * @param $path
+     */
     static public function route($path)
     {
+       return Client::getInstance($path);
         // TODO: Implement route() method.
     }
 }
