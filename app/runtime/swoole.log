@@ -1,5 +1,0 @@
-[2019-07-14 01:14:31 *1153.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 24 byte failed, because connection[fd=1] is closed
-[2019-07-14 01:18:39 *1183.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 24 byte failed, because connection[fd=1] is closed
-[2019-07-14 01:18:43 $1178.0]	WARNING	swManager_check_exit_status: worker#0[pid=1183] abnormal exit, status=255, signal=0
-[2019-07-14 01:18:46 $1178.0]	WARNING	swManager_check_exit_status: worker#0[pid=1186] abnormal exit, status=255, signal=0
-[2019-07-14 01:21:20 *1217.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 24 byte failed, because connection[fd=1] is closed
