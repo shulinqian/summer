@@ -1,11 +1,21 @@
 {
-    "name": "root/summer",
-    "description": "summer manage",
-    "authors": [
-        {
-            "name": "qian",
-            "email": "330576744@qq.com"
-        }
-    ],
-    "require": {}
+  "name": "suframe/summer",
+  "description": "summer app",
+  "authors": [
+    {
+      "name": "qian",
+      "email": "330576744@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "app"
+    }
+  },
+  "require": {
+    "suframe/service": "^0.1"
+  },
+  "require-dev": {
+    "swoole/ide-helper": "@dev"
+  }
 }

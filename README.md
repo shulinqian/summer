@@ -1,30 +1,52 @@
-# summer
+summer
+===============
+基于suframe框架的微服务后端服务，通过swoole的tcp server功能提供对外rest接口服务和内部rpc服务，启动会自动上报到注册中心。
 
-#### 介绍
-基于swoole开发的一个轻量级框架
+# 主要功能
 
-#### 软件架构
-软件架构说明:http://www.zacms.com/index.php/archives/340/
+* 接口转发
+* 服务注册
+* 代理接口连接池
+* 定时检测接口
+* rpc接口自动同步
+* rpc生成ide代码提示
 
-#### todo
+为了给用户提供足够大的开发自由度，服务只提供基本底层功能，具体db，cache，orm等由用户自行选型，后面通过实际项目的磨合，会推荐一些组件或者框架组合，完全按照你喜欢的方式进行开发。
 
- - server的端口范围设置 (manage端分配，如果注册server带了端口检查是否占用)
- - server注册 (统一管理server和负载，并给出状态报告)
- - server状态检测和监控 (完成热插拔)
- - config全局配置 (热更新)
- - 请求转发 (http+websocket)
- - auth统一授权 (统一授权，下放登录信息，server可直接获取登录信息)
- - 日志收集 (自动收集日志，看是否用es进行管理日志或者其他方案)
- - 降级限流 (这个没想好怎么做，难道每个server的降级写着manage端还是有单个server自己控制流量)
- - 集中式的事件注册和分发 (基于异步事件，server统一上报，通过注册server监听，分发到监听的server上)
- - 集中式锁（初步设想是注册服务的时候，带上lock关键词，分发的时候，在manage端基于swoole内存操作级别的锁，或者单个server的基于redis的锁）
- - 通用服务插件 (提供一些通用服务，比如短信，邮件等)
- - 支持集群和docker化
- - 中间件
+## 创建服务
 
-#### 安装教程
+~~~
+composer coreate-project suframe/summer
+~~~
 
-#### 使用说明
+配置注册中心
+app/config/config/php, 修改registerServer的ip或端口(默认可以不修改)
 
-#### 参与贡献
+~~~
+php app/summer tcp:start
+~~~
 
+其他命令：
+```
+php app/summer list //列出所有命令
+php app/summer check //检查tcp服务是否运行中
+php app/summer stop //停止tcp服务
+php app/summer rpc:sync //同步rpc接口(此命令会更新app/config/.phpstorm.meta.php文件，用与rpc接口提示)
+```
+
+## 命名规范
+
+遵循PSR-2命名规范和PSR-4自动加载规范。
+
+## 参与开发
+
+QQ群：904592189
+
+
+## 版权信息
+
+suframe遵循Apache2开源协议发布，并提供免费使用。
+
+版权所有Copyright © 2019- by qian <330576744@qq.com>
+
+All rights reserved。
