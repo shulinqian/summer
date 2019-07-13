@@ -124,7 +124,7 @@ EOF;
     public function buildRpcMeta(){
         $savePath = SUMMER_APP_ROOT . 'runtime/rpc';
         $finder = new Finder();
-        $finder->depth('< 2')->name('*Rpc.tpl');
+        $finder->depth('< 2')->name('*.tpl');
         $finder->files()->in($savePath);
         $interfaces = [];
         foreach ($finder as $file) {
