@@ -15,7 +15,7 @@ class DemoRpc
      * @param string $name
      * @return string
      */
-    public function getList(string $name): array
+    public function getList(string $name): string
     {
         return 'hello ' . $name;
     }
