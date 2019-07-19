@@ -16,7 +16,7 @@ summer
 ## 创建服务
 
 ~~~
-composer create-project suframe/summer
+composer create-project suframe/summer=@dev
 ~~~
 
 配置注册中心
