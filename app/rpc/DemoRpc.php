@@ -13,11 +13,11 @@ class DemoRpc
      * demo接口
      *
      * @param string $name
-     * @return string
+     * @return array
      */
-    public function getList(string $name): string
+    public function getList(string $name): array
     {
-        return 'hello ' . $name;
+        return ['hello ' . $name];
     }
 
 }
