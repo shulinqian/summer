@@ -16,8 +16,9 @@ summer
 ## 创建服务
 
 ~~~
-composer create-project suframe/summer=@dev
+composer create-project suframe/summer=@dev user
 ~~~
+user 替换成你的服务名称，例如order,goods等
 
 配置注册中心
 app/config/config/php, 修改registerServer的ip或端口(默认可以不修改)
