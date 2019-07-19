@@ -16,7 +16,7 @@ summer
 ## 创建服务
 
 ~~~
-composer coreate-project suframe/summer
+composer create-project suframe/summer
 ~~~
 
 配置注册中心
