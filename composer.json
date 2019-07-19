@@ -12,8 +12,10 @@
       "app\\": "app"
     }
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
-    "suframe/service": "dev-master"
+    "suframe/service": "dev-master@dev"
   },
   "require-dev": {
     "swoole/ide-helper": "@dev"
