@@ -17,7 +17,7 @@ class DemoRpc
      */
     public function getList(string $name): array
     {
-        return ['hello ' . $name];
+        return ['rpc hello ' . $name];
     }
 
 }
