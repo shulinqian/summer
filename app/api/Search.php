@@ -10,7 +10,7 @@ class Search{
     }
 
     public function rpcHello(){
-        SRpc::route('/demo/DemoRpc')->getList('summer!');
+        return SRpc::route('/demo/DemoRpc')->getList('summer!');
     }
 
 }
