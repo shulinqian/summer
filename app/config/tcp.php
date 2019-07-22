@@ -5,6 +5,6 @@ return [
         'port' => 8081,
     ],
     'swoole' => [
-        'worker_num' => 1 //一般为cpu核数的1-4倍
+        'worker_num' => 2 //一般为cpu核数的1-4倍
     ]
 ];
